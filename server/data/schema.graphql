@@ -1,0 +1,39 @@
+type Feature implements Node {
+  id: ID!
+  name: String
+  description: String
+  url: String
+}
+
+type FeatureConnection {
+  pageInfo: PageInfo!
+  edges: [FeatureEdge]
+}
+
+type FeatureEdge {
+  node: Feature
+  cursor: String!
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Query {
+  node(id: ID!): Node
+  viewer: User
+}
+
+type User implements Node {
+  id: ID!
+  features(after: String, first: Int, before: String, last: Int): FeatureConnection
+  username: String
+  website: String
+}
