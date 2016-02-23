@@ -1,0 +1,13 @@
+@import '../variables.scss';
+
+.mdl-mini-footer {
+  padding: 30px 16px !important;
+  background-color: $black-light !important;
+  justify-content: center !important;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
