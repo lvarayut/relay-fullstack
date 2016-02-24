@@ -2,11 +2,10 @@
   "name": "relay-fullstack",
   "version": "1.0.0",
   "description": "Relay Starter Kit - Integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS",
-  "main": "build/server/index.js",
   "scripts": {
     "start": "babel-node server/index.js",
     "update": "babel-node server/utils/updateSchema.js",
-    "build": "NODE_ENV=production webpack -p --config webpack.production.config.js"
+    "deploy": "NODE_ENV=production webpack --config webpack.production.config.js && NODE_ENV=production npm start"
   },
   "repository": {
     "type": "git",
@@ -30,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/lvarayut/relay-fullstack/issues"
   },
-  "homepage": "https://github.com/lvarayut/relay-fullstack#readme",
+  "homepage": "https://github.com/lvarayut/relay-fullstack",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
     "babel-cli": "^6.5.1",

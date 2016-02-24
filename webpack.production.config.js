@@ -9,9 +9,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     app: [
-      path.join(__dirname, 'client/index.js'),
-      'webpack-dev-server/client?http://localhost:3000',
-      'webpack/hot/only-dev-server'
+      path.join(__dirname, 'client/index.js')
     ],
     vendor: ['react', 'react-dom', 'react-mdl', 'react-relay', 'react-router', 'react-router-relay']
   },
@@ -37,9 +35,14 @@ module.exports = {
     return [precss, autoprefixer];
   },
   plugins: [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
-    new webpack.NoErrorsPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: '--verbose'
+      }
+    }),
     new HtmlWebpackPlugin({
       title: 'Relay Starter Kit - Integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS',
       template: './client/index.html',
