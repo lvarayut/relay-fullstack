@@ -30,7 +30,7 @@ module.exports = {
       loaders: ['style-loader', 'css-loader', 'postcss-loader']
     }, {
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
-      loader: 'url-loader?limit=10000'
+      loader: 'url-loader?limit=10000&name=assets/[hash].[ext]'
     }]
   },
   postcss: function() {
