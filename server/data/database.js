@@ -1,5 +1,3 @@
-'use strict';
-
 class User {
   constructor(id, name, username, website) {
     this.id = id;
