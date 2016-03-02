@@ -8,4 +8,4 @@ let config = {
   }
 };
 
-export default _.extend(config, require(`./${config.env}`));
+export default _.extend(config, require(`./${config.env}`).default);
