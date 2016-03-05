@@ -24,7 +24,7 @@ Launch your favorite web browser and go to `http://localhost:3000` for Relay app
 
 ## Deployment
 
-In order to deploy a project, it is a good practice to minify all JavaScript files, Stop spawning GraphiQL server, pull off some duplicate dependencies, and remove all unnecessary scripts, for example, Hot-reload. All of these can be done by executing the following command:
+In order to deploy a project, it is a good practice to minify all JavaScript files, stop spawning the GraphiQL server, pull off some duplicate dependencies, and remove all unnecessary scripts, for example, Hot-reload. All of these can be done by executing the following command:
 
 ```bash
 $ npm run deploy
@@ -48,9 +48,9 @@ $ npm run update
     │   ├── components                  - Relay containers, React components, and SCSS files used in the components
     │   │   └── variables.scss          - Common SCSS variables
     │   ├── routes                      - React-router-relay 
-    │   │   ├── Route.js                - All routes definitions
+    │   │   ├── Route.js                - All route definitions
     │   │   └── ViewerQuery.js          - Entry node of a GraphQL query
-    │   ├── index.html                  - HTML template file used to by html-webpack-plugin 
+    │   ├── index.html                  - HTML template file used by html-webpack-plugin 
     │   └── index.js                    - Client entry point
     ├── server                          - All of the server side code resides in this folder
     │   ├── config                      - Configuration 
@@ -65,7 +65,7 @@ $ npm run update
     │   │   ├── schema.js               - Schema definitions
     │   │   └── schema.json             - Compiled schema to be used by Relay 
     │   ├── utils                       - Utilities 
-    │   │   ├── babelRelayPlugin.js     - babel-relay-plugin provided by Relay
+    │   │   ├── babelRelayPlugin.js     - Babel-relay-plugin provided by Relay
     │   │   └── updateSchema.js         - Code for compiling the defined schema to schema.json and schema.graphql
     │   └── index.js                    - Server entry point
     ├── package.json                    - List of dependencies
