@@ -8,19 +8,19 @@ export default class Signup extends React.Component {
         <h1>Signup</h1>
         <hr />
         <div style={{width: '70%', margin: 'auto'}}>
-            <Grid>
-              <form style={{margin: 'auto'}}>
-                <Cell col={12}>
-                  <Textfield onChange={() => {}} label='Username'/>
-                </Cell>
-                <Cell col={12}>
-                  <Textfield onChange={() => {}} label='Password'/>
-                </Cell>
-                <Cell col={12} style={{textAlign: 'right'}}>
-                  <Button primary>Sign up</Button>
-                </Cell>
-              </form>
-            </Grid>
+          <Grid>
+            <form style={{margin: 'auto'}}>
+              <Cell col={12}>
+                <Textfield onChange={() => {}} label='Username'/>
+              </Cell>
+              <Cell col={12}>
+                <Textfield onChange={() => {}} label='Password'/>
+              </Cell>
+              <Cell col={12} style={{textAlign: 'right'}}>
+                <Button primary>Sign up</Button>
+              </Cell>
+            </form>
+          </Grid>
         </div>
       </div>
     );

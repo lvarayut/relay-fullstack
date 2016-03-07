@@ -11,5 +11,5 @@ document.body.appendChild(rootNode);
 
 ReactDOM.render(
   <RelayRouter history={browserHistory} routes={Route} />,
-    rootNode
+  rootNode
 );

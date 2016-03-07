@@ -35,9 +35,9 @@ import {
  * The first method defines the way we resolve an ID to its object.
  * The second defines the way we resolve an object to its GraphQL type.
  */
-var {nodeInterface, nodeField} = nodeDefinitions(
+const {nodeInterface, nodeField} = nodeDefinitions(
   (globalId) => {
-    var {type, id} = fromGlobalId(globalId);
+    const {type, id} = fromGlobalId(globalId);
     if (type === 'User') {
       return getUser(id);
     } else if (type === 'Feature') {
@@ -61,7 +61,7 @@ var {nodeInterface, nodeField} = nodeDefinitions(
  * Define your own types here
  */
 
-var userType = new GraphQLObjectType({
+const userType = new GraphQLObjectType({
   name: 'User',
   description: 'A person who uses our app',
   fields: () => ({
@@ -84,7 +84,7 @@ var userType = new GraphQLObjectType({
   interfaces: [nodeInterface]
 });
 
-var featureType = new GraphQLObjectType({
+const featureType = new GraphQLObjectType({
   name: 'Feature',
   description: 'Feature integrated in our starter kit',
   fields: () => ({
@@ -108,14 +108,13 @@ var featureType = new GraphQLObjectType({
 /**
  * Define your own connection types here
  */
-var {connectionType: featureConnection} =
-  connectionDefinitions({name: 'Feature', nodeType: featureType});
+const {connectionType: featureConnection} = connectionDefinitions({name: 'Feature', nodeType: featureType});
 
 /**
  * This is the type that will be the root of our query,
  * and the entry point into our schema.
  */
-var queryType = new GraphQLObjectType({
+const queryType = new GraphQLObjectType({
   name: 'Query',
   fields: () => ({
     node: nodeField,
@@ -131,7 +130,7 @@ var queryType = new GraphQLObjectType({
  * This is the type that will be the root of our mutations,
  * and the entry point into performing writes in our schema.
  */
-var mutationType = new GraphQLObjectType({
+const mutationType = new GraphQLObjectType({
   name: 'Mutation',
   fields: () => ({
     // Add your own mutations here
