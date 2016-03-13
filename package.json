@@ -44,6 +44,7 @@
     "file-loader": "^0.8.5",
     "gaze": "^1.0.0",
     "html-webpack-plugin": "^2.10.0",
+    "lodash": "4.6.1",
     "postcss-loader": "^0.8.2",
     "precss": "^1.4.0",
     "react-transform-catch-errors": "^1.0.2",
