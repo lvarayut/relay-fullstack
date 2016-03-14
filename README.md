@@ -54,7 +54,7 @@ $ npm run update
     │   └── index.js                    - Client entry point
     ├── server                          - All of the server side code resides in this folder
     │   ├── config                      - Configuration 
-    │   │   └── environment             - Saparate configuration for each environment
+    │   │   └── environment             - Separate configuration for each environment
     │   │       ├── development.js      - Development configuration
     │   │       ├── index.js            - Common configuration used in any environment
     │   │       ├── production.js       - Production configuration
