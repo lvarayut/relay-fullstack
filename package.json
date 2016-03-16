@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Relay Starter Kit - Integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS",
   "scripts": {
-    "start": "babel-node server/index.js",
+    "start": "npm run update && babel-node server/index.js",
     "update": "babel-node server/utils/updateSchema.js",
     "deploy": "NODE_ENV=production webpack --config webpack.production.config.js && NODE_ENV=production npm start"
   },

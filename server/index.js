@@ -36,9 +36,6 @@ if (config.env === 'development') {
   app.use('/', express.static(path.join(__dirname, '../build')));
   app.listen(config.port, () => console.log(`Relay is listening on port ${config.port}`));
 
-  // Update schema.json and schema.graphql
-  updateSchema();
-
   // Watch JavaScript files in the data folder for changes, and update schema.json and schema.graphql
   gaze(path.join(__dirname, 'data/*.js'), (err, watcher) => {
     if (err) console.error('Error: Watching files in data folder');
