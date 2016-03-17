@@ -1,15 +1,17 @@
 import path from 'path';
 import fs from 'fs';
-import schema from '../data/schema';
 import {graphql} from 'graphql';
 import {introspectionQuery, printSchema} from 'graphql/utilities';
+import requireUncached from '../utils/requireUncached';
 
+const schemaFile = path.join(__dirname, '../data/schema.js');
 const jsonFile = path.join(__dirname, '../data/schema.json');
 const graphQLFile = path.join(__dirname, '../data/schema.graphql');
 
 async function updateSchema() {
   try {
-    let json = await graphql(schema, introspectionQuery);
+    const schema = requireUncached(schemaFile).default;
+    const json = await graphql(schema, introspectionQuery);
     fs.writeFileSync(jsonFile, JSON.stringify(json, null, 2));
     fs.writeFileSync(graphQLFile, printSchema(schema));
     console.log('Schema has been regenerated');
