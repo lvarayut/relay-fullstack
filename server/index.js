@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import express from 'express';
 import graphQLHTTP from 'express-graphql';
 import WebpackDevServer from 'webpack-dev-server';
+import historyApiFallback from 'connect-history-api-fallback';
 import gaze from 'gaze';
 import requireUncached from './utils/requireUncached';
 import webpackConfig from '../webpack.config';
@@ -69,6 +70,7 @@ if (config.env === 'development') {
 } else if (config.env === 'production') {
   // Launch Relay by creating a normal express server
   relayServer = express();
+  relayServer.use(historyApiFallback());
   relayServer.use('/', express.static(path.join(__dirname, '../build')));
   relayServer.use('/graphql', graphQLHTTP({ schema }));
   relayServer.listen(config.port, () => console.log(`App is listening on port ${config.port}`));
