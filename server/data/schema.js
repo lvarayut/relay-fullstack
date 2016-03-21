@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, no-use-before-define */
 import {
   GraphQLBoolean,
   GraphQLFloat,
@@ -35,25 +36,23 @@ import {
  * The first method defines the way we resolve an ID to its object.
  * The second defines the way we resolve an object to its GraphQL type.
  */
-const {nodeInterface, nodeField} = nodeDefinitions(
+const { nodeInterface, nodeField } = nodeDefinitions(
   (globalId) => {
-    const {type, id} = fromGlobalId(globalId);
+    const { type, id } = fromGlobalId(globalId);
     if (type === 'User') {
       return getUser(id);
     } else if (type === 'Feature') {
       return getFeature(id);
-    } else {
-      return null;
     }
+    return null;
   },
   (obj) => {
     if (obj instanceof User) {
       return userType;
-    } else if (obj instanceof Feature)  {
+    } else if (obj instanceof Feature) {
       return featureType;
-    } else {
-      return null;
     }
+    return null;
   }
 );
 
@@ -108,7 +107,7 @@ const featureType = new GraphQLObjectType({
 /**
  * Define your own connection types here
  */
-const {connectionType: featureConnection} = connectionDefinitions({name: 'Feature', nodeType: featureType});
+const { connectionType: featureConnection } = connectionDefinitions({ name: 'Feature', nodeType: featureType });
 
 /**
  * This is the type that will be the root of our query,

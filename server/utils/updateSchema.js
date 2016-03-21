@@ -1,7 +1,8 @@
+/* eslint-disable no-console */
 import path from 'path';
 import fs from 'fs';
-import {graphql} from 'graphql';
-import {introspectionQuery, printSchema} from 'graphql/utilities';
+import { graphql } from 'graphql';
+import { introspectionQuery, printSchema } from 'graphql/utilities';
 import requireUncached from '../utils/requireUncached';
 
 const schemaFile = path.join(__dirname, '../data/schema.js');

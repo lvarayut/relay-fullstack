@@ -4,11 +4,16 @@ import Footer from '../Footer/FooterComponent';
 import './App.scss';
 
 export default class App extends React.Component {
+  static propTypes = {
+    children: React.PropTypes.object.isRequired,
+    viewer: React.PropTypes.object.isRequired
+  };
+
   render() {
     return (
       <div>
         <Navbar />
-        <div className="greeting">
+        <div className='greeting'>
           <h1>Sawasdee, Sawasdee!</h1>
           <p>Always a pleasure scaffolding your apps</p>
           <img src={require('../../assets/yeoman.png')} />
