@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/lvarayut/relay-fullstack",
   "devDependencies": {
-    "autoprefixer": "^6.3.3",
+    "autoprefixer": "^6.3.4",
     "babel-cli": "^6.6.5",
     "babel-core": "^6.7.2",
     "babel-eslint": "^6.0.0-beta.6",
@@ -49,7 +49,7 @@
     "eslint-plugin-react": "^4.2.3",
     "file-loader": "^0.8.5",
     "gaze": "^1.0.0",
-    "html-webpack-plugin": "^2.10.0",
+    "html-webpack-plugin": "^2.12.0",
     "postcss-loader": "^0.8.2",
     "pre-commit": "^1.1.2",
     "precss": "^1.4.0",
@@ -62,18 +62,18 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "connect-history-api-fallback": "^1.1.0",
+    "connect-history-api-fallback": "^1.2.0",
     "express": "^4.13.4",
     "express-graphql": "^0.4.10",
     "graphql": "^0.4.18",
     "graphql-relay": "^0.3.6",
     "lodash": "^4.6.1",
-    "normalize.css": "^3.0.3",
+    "normalize.css": "^4.0.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "react-mdl": "^1.4.4",
+    "react-mdl": "^1.5.2",
     "react-relay": "^0.7.3",
     "react-router": "^2.0.1",
-    "react-router-relay": "^0.9.0"
+    "react-router-relay": "^0.9.4"
   }
 }
