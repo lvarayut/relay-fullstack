@@ -11,7 +11,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='app'>
         <Navbar />
         <div className='greeting'>
           <h1>Sawasdee, Sawasdee!</h1>

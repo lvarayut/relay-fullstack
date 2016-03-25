@@ -3,6 +3,12 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import '../variables.scss';
 
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 h1 {
   font-size: 2.5em;
   font-weight: normal;
@@ -22,6 +28,7 @@ h2 {
 }
 
 .content {
+  flex: 1;
   margin: 10px 50px;
 
   .tools {
