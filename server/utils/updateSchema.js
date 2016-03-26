@@ -2,6 +2,7 @@
 import path from 'path';
 import fs from 'fs';
 import { graphql } from 'graphql';
+import chalk from 'chalk';
 import { introspectionQuery, printSchema } from 'graphql/utilities';
 import requireUncached from '../utils/requireUncached';
 
@@ -15,9 +16,9 @@ async function updateSchema() {
     const json = await graphql(schema, introspectionQuery);
     fs.writeFileSync(jsonFile, JSON.stringify(json, null, 2));
     fs.writeFileSync(graphQLFile, printSchema(schema));
-    console.log('Schema has been regenerated');
+    console.log(chalk.green('Schema has been regenerated'));
   } catch (err) {
-    console.error(err);
+    console.error(chalk.red(err.stack));
   }
 }
 

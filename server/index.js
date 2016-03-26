@@ -6,6 +6,7 @@ import graphQLHTTP from 'express-graphql';
 import WebpackDevServer from 'webpack-dev-server';
 import historyApiFallback from 'connect-history-api-fallback';
 import gaze from 'gaze';
+import chalk from 'chalk';
 import requireUncached from './utils/requireUncached';
 import webpackConfig from '../webpack.config';
 import config from './config/environment';
@@ -22,7 +23,7 @@ function startGraphQLServer(schema) {
     pretty: true,
     schema
   }));
-  graphQLServer = graphql.listen(config.graphql.port, () => console.log(`GraphQL is listening on port ${config.graphql.port}`));
+  graphQLServer = graphql.listen(config.graphql.port, () => console.log(chalk.green(`GraphQL is listening on port ${config.graphql.port}`)));
 }
 
 function startRelayServer() {
@@ -41,7 +42,7 @@ function startRelayServer() {
 
   // Serve static resources
   relayServer.use('/', express.static(path.join(__dirname, '../build')));
-  relayServer.listen(config.port, () => console.log(`Relay is listening on port ${config.port}`));
+  relayServer.listen(config.port, () => console.log(chalk.green(`Relay is listening on port ${config.port}`)));
 }
 
 if (config.env === 'development') {
@@ -51,7 +52,7 @@ if (config.env === 'development') {
 
   // Watch JavaScript files in the data folder for changes, and update schema.json and schema.graphql
   gaze(path.join(__dirname, 'data/*.js'), (err, watcher) => {
-    if (err) console.error('Error: Watching files in data folder');
+    if (err) console.error(chalk.red('Error: Watching files in data folder'));
     watcher.on('all', async() => {
       try {
         // Close the GraphQL server, update the schema.json and schema.graphql, and start the server again
@@ -64,7 +65,7 @@ if (config.env === 'development') {
         relayServer.listeningApp.close();
         startRelayServer();
       } catch (e) {
-        console.error(e.stack);
+        console.error(chalk.red(e.stack));
       }
     });
   });
@@ -74,5 +75,5 @@ if (config.env === 'development') {
   relayServer.use(historyApiFallback());
   relayServer.use('/', express.static(path.join(__dirname, '../build')));
   relayServer.use('/graphql', graphQLHTTP({ schema }));
-  relayServer.listen(config.port, () => console.log(`App is listening on port ${config.port}`));
+  relayServer.listen(config.port, () => console.log(chalk.green(`Relay is listening on port ${config.port}`)));
 }
