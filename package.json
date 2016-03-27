@@ -20,11 +20,13 @@
     "express",
     "es6",
     "es7",
-    "jxs",
+    "jsx",
     "webpack",
     "babel",
     "material design lite",
-    "postcss"
+    "postcss",
+    "scaffolding",
+    "fullstack"
   ],
   "author": "Varayut Lerdkanlayanawat",
   "license": "MIT",
