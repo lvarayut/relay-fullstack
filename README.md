@@ -98,6 +98,19 @@ $ npm run update
 
 [PostCSS](http://postcss.org) - PostCSS is a tool for transforming CSS with JavaScript. It has roughly 200 plugins to help you write CSS easier.
 
+### Additional Tools
+[React transform HMR](https://github.com/gaearon/react-transform-hmr) - A React Transform that enables hot reloading React classes.
+
+[React router relay](https://github.com/relay-tools/react-router-relay) - Relay integration for React Router.
+
+[Eslint](http://eslint.org) - The pluggable linting utility for JavaScript and JSX.
+
+[Autoprefixer](https://github.com/postcss/autoprefixer) - Parse CSS and add vendor prefixes to rules.
+
+[Precss](https://github.com/jonathantneal/precss) - Use Sass-like markup in your CSS.
+
+[Gaze](https://github.com/shama/gaze) - A globbing fs.watch wrapper used for watching files and live-reloading a back-end server.
+
 ## Credits
 - Relay Fullstack is inspired by [relay-starter-kit](https://github.com/relayjs/relay-starter-kit). Please take a look at the original code to learn more.
 - Handcrafted with ♥ by Varayut Lerdkanlayanawat.
