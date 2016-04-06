@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../Navbar/NavbarComponent';
-import Footer from '../Footer/FooterComponent';
+import Footer from '../Footer/FooterContainer';
 import './App.scss';
 
 export default class App extends React.Component {
@@ -21,7 +21,7 @@ export default class App extends React.Component {
         <div className='content'>
           {this.props.children}
         </div>
-        <Footer username={this.props.viewer.username} website={this.props.viewer.website} />
+        <Footer viewer={this.props.viewer} />
       </div>
     );
   }
