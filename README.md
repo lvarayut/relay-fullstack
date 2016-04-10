@@ -109,7 +109,7 @@ $ npm run update
 
 [Precss](https://github.com/jonathantneal/precss) - Use Sass-like markup in your CSS.
 
-[Gaze](https://github.com/shama/gaze) - A globbing fs.watch wrapper used for watching files and live-reloading a back-end server.
+[Nodemon](http://nodemon.io) - Monitor for any changes in your node.js application and automatically restart the server.
 
 ## Credits
 - Relay Fullstack is inspired by [relay-starter-kit](https://github.com/relayjs/relay-starter-kit). Please take a look at the original code to learn more.
