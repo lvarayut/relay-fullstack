@@ -115,6 +115,13 @@ $ npm run update
 - Relay Fullstack is inspired by [relay-starter-kit](https://github.com/relayjs/relay-starter-kit). Please take a look at the original code to learn more.
 - Handcrafted with ♥ by Varayut Lerdkanlayanawat.
 
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [![lvarayut](https://avatars.githubusercontent.com/u/4281887?v=3&s=120)<br /><sub>lvarayut</sub>](https://github.com/lvarayut)<br /> | [![ianaya89](https://avatars.githubusercontent.com/u/3258966?v=3&s=120)<br /><sub>ianaya89</sub>](https://github.com/ianaya89)<br /> | [![kennydee](https://avatars.githubusercontent.com/u/1484406?v=3&s=120)<br /><sub>kennydee</sub>](https://github.com/kennydee)<br /> | [![jg123](https://avatars.githubusercontent.com/u/693277?v=3&s=120)<br /><sub>jg123</sub>](https://github.com/jg123)<br /> |
+| :---: | :---: | :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)

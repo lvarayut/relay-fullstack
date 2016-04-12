@@ -32,8 +32,12 @@ build/
 .idea_modules/
 
 # --------------------
-# vim Files
+# Vim Files
 # --------------------
 *.swp
 *.vim
 
+# --------------------
+# MISC
+# --------------------
+.all-contributorsrc
