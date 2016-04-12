@@ -1,3 +1,7 @@
+schema {
+  query: Query
+}
+
 type Feature implements Node {
   id: ID!
   name: String
