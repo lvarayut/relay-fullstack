@@ -16,7 +16,7 @@ export default class App extends React.Component {
         <div className='greeting'>
           <h1>Sawasdee, Sawasdee!</h1>
           <p>Always a pleasure scaffolding your apps</p>
-          <img src={require('../../assets/yeoman.png')} />
+          <img src={require('../../assets/yeoman.png')} alt='yeoman' />
         </div>
         <div className='content'>
           {this.props.children}
