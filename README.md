@@ -1,10 +1,17 @@
-# Relay Fullstack
+<h1 align="center">
+  <br>
+	<img width="800" src="https://cloud.githubusercontent.com/assets/4281887/14516854/792107ac-0231-11e6-95dd-86bb2b5197e3.png">
+	<br>
+  <br>
+  <br>
+</h1>
+
 [![Dependency Status](https://img.shields.io/david/lvarayut/relay-fullstack.svg)](https://github.com/lvarayut/relay-fullstack)
 [![devDependency Status](https://img.shields.io/david/dev/lvarayut/relay-fullstack.svg)](https://github.com/lvarayut/relay-fullstack)
 > Relay Fullstack is a Relay scaffolding application that aims to help you get up and running a project without worrying about integrating tools. It comes with many modern technologies; Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS. Relay Fullstack is also using [Hot-reload](https://github.com/gaearon/react-transform-hmr) to real time update the screen whenever any code changes.
 
 ## Example 
-![laptop](https://cloud.githubusercontent.com/assets/4281887/13377800/9c4705a2-de1d-11e5-82cb-745e16d5b1c4.gif)
+![Demo](https://cloud.githubusercontent.com/assets/4281887/13377800/9c4705a2-de1d-11e5-82cb-745e16d5b1c4.gif)
 
 ## Usage
 
