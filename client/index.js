@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { RelayRouter } from 'react-router-relay';
-import { browserHistory } from 'react-router';
+import { browserHistory, applyRouterMiddleware, Router } from 'react-router';
+import useRelay from 'react-router-relay';
 
 import '../node_modules/react-mdl/extra/material.js';
 import Route from './routes/Route';
@@ -10,6 +10,6 @@ const rootNode = document.createElement('div');
 document.body.appendChild(rootNode);
 
 ReactDOM.render(
-  <RelayRouter history={browserHistory} routes={Route} />,
+  <Router history={browserHistory} routes={Route} render={applyRouterMiddleware(useRelay)} />,
   rootNode
 );
