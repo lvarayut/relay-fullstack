@@ -258,7 +258,7 @@
             },
             {
               "name": "edges",
-              "description": "Information to aid in pagination.",
+              "description": "A list of edges.",
               "args": [],
               "type": {
                 "kind": "LIST",
