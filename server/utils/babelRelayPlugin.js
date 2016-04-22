@@ -1,4 +1,4 @@
-/* eslint-disable no-var, func-names, prefer-arrow-callback */
+/* eslint-disable no-var, func-names, prefer-arrow-callback, global-require */
 var fs = require('fs');
 var path = require('path');
 var jsonFile = path.join(__dirname, '../data/schema.json');

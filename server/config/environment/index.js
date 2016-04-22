@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import _ from 'lodash';
 
 const config = {

@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import React from 'react';
 import { Grid, Cell, Card, CardTitle, CardText, CardActions, Button } from 'react-mdl';
 
