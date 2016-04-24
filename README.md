@@ -12,6 +12,7 @@
 
 ## Example 
 ![Demo](https://cloud.githubusercontent.com/assets/4281887/13377800/9c4705a2-de1d-11e5-82cb-745e16d5b1c4.gif)
+> Check out the [Live demo](http://relay-fullstack.herokuapp.com) on Heroku.
 
 ## Usage
 
@@ -31,6 +32,7 @@ Launch your favorite web browser and go to `http://localhost:3000` for Relay app
 
 ## Deployment
 
+#### Local machine
 In order to deploy a project, it is a good practice to minify all JavaScript files, stop spawning the GraphiQL server, pull off some duplicate dependencies, and remove all unnecessary scripts, for example, Hot-reload. All of these can be done by executing the following command:
 
 ```bash
@@ -38,6 +40,17 @@ $ npm run deploy
 ```
 
 Again, launch your favorite web browser and go to `http://localhost:3000`.
+
+#### Heroku
+Before getting started, make sure you already installed the [Heroku Toolbelt](https://toolbelt.heroku.com), which is a command-line tooling for managing Heroku applications that makes it easy to deploy an application in a few steps:
+
+```bash
+$ heroku create                     # Create a new Heroku application
+$ git push heroku master            # Push your code into the created Heroku repository
+$ heroku ps:scale web=1             # Run the deployed application
+````
+
+That is it! Now, open the application on your default browser using `heroku open`.
 
 ## Schema
 
