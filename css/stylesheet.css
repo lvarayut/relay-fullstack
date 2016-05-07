@@ -1,5 +1,13 @@
+/* ==========================================================================
+   GENERAL
+   ========================================================================== */
+
+* {
+  font-weight: lighter;
+}
+
 body {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #666;
@@ -13,39 +21,121 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
 
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
 
 header {
   color: #FFFFFF;
   background-color: #00BCD4;
   text-align: center;
-  padding: 10vh;
+  padding-top: 15vh;
 }
 
 header > .title {
-  margin: 0;
-  font-weight: 300;
+  margin-top: 35px;
+  margin-bottom: 0;
 }
 
 header > .slogan {
   opacity: 0.6;
-  font-weight: 300;
 }
 
-.body {
+header > .control {
+  margin: 30px;
+}
+
+header > .control > a {
+  display: inline-block;
+  font-size: 1.2em;
+  padding: 5px 0;
+  width: 160px;
+}
+
+header > .control > .btn-gs {
+  background: #FFFFFF;
+  color: #00BCD4;
+}
+
+header > .control > .btn-demo {
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  margin-left: 10px;
+}
+
+/* ==========================================================================
+   MAIN
+   ========================================================================== */
+
+.main {
   flex: 1;
 }
+
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 
 footer {
   background-color: #333;
   text-align: center;
   padding: 30px 16px;
-
 }
+
 footer a {
   color: #FFFFFF;
   text-decoration: none;
 }
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   MISC
+   ========================================================================== */
+
+
+/* ==========================================================================
+   MEDIA
+   ========================================================================== */
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (max-width: 1200px) {}
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (max-width: 992px) {}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (max-width: 768px) {}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width: 480px) {
+  header > .control > a {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+  }
+  header > .control > .btn-gs {
+    margin-bottom: 10px;
+  }
+  header > .control > .btn-demo {
+    margin-left: auto;
+  }
+}
+
+
+/* Custom, iPhone Retina */
+
+@media only screen and (max-width: 320px) {}
+
