@@ -50,21 +50,20 @@ header > .control > a {
   display: inline-block;
   font-size: 1.2em;
   transition: all 0.3s ease-out 0s;
+  padding: 5px 0;
+  width: 160px;
 }
 
 header > .control > .btn-gs {
+  border: 2px solid #FFFFFF;
   background: #FFFFFF;
   color: #00BCD4;
-  padding: 7px 0;
-  width: 164px;
 }
 
 header > .control > .btn-demo {
   border: 2px solid #FFFFFF;
   color: #FFFFFF;
   margin-left: 10px;
-  padding: 5px 0;
-  width: 160px;
 }
 
 header > .control > .btn-gs:hover {
