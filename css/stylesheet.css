@@ -49,20 +49,41 @@ header > .control {
 header > .control > a {
   display: inline-block;
   font-size: 1.2em;
-  padding: 5px 0;
-  width: 160px;
+  transition: all 0.3s ease-out 0s;
 }
 
 header > .control > .btn-gs {
   background: #FFFFFF;
   color: #00BCD4;
+  padding: 7px 0;
+  width: 164px;
 }
 
 header > .control > .btn-demo {
-  border: 1px solid #FFFFFF;
+  border: 2px solid #FFFFFF;
   color: #FFFFFF;
   margin-left: 10px;
+  padding: 5px 0;
+  width: 160px;
 }
+
+header > .control > .btn-gs:hover {
+  color: #FFFFFF;
+}
+
+header > .control > a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+header > .ribbon > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  width: 149px;
+  height: 149px;
+}
+
 
 /* ==========================================================================
    MAIN
