@@ -96,6 +96,31 @@ header > .twitter-share-button {
 
 .main {
   flex: 1;
+  text-align: center;
+  margin: 0 55px;
+}
+
+.main h1 {
+  color: #666666;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.divider {
+  border-bottom: 1px solid #EEE;
+  width: 20%;
+  margin: 15px auto;
+}
+
+.main > .rf > .description {
+  text-align: justify;
+  text-indent: 50px;
+}
+
+.main > .rf > img {
+  width: 70%;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -136,12 +161,20 @@ footer a:hover {
 
 /* Medium Devices, Desktops */
 
-@media only screen and (max-width: 992px) {}
+@media only screen and (max-width: 992px) {
+  .main > .rf > img {
+    width: 90%;
+  }
+}
 
 
 /* Small Devices, Tablets */
 
-@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 768px) {
+  .main > .rf > img {
+    width: 100%;
+  }
+}
 
 
 /* Extra Small Devices, Phones */
