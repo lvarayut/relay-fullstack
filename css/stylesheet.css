@@ -21,6 +21,14 @@ a {
   text-decoration: none;
 }
 
+.blue {
+  color: #00BCD4;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 
 /* ==========================================================================
    HEADER
@@ -123,6 +131,55 @@ header > .twitter-share-button {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+.main > .why {
+  margin: 30px -55px 0 -55px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  background: #F8F8F8;
+}
+
+.main > .why > .reason {
+  display: flex;
+  padding: 40px;
+}
+
+.main > .why > .reason > * {
+  flex: 1;
+}
+
+.main > .why > .reason > * .description {
+  padding: 0 20%;
+}
+
+.main > .why > .reason .fa {
+  background: #00BCD4;
+  border-radius: 100px;
+  padding: 30px;
+  font-size: 3em;
+  color: #FFFFFF;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.main > .why > .reason .title {
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.main > .why > .control > .btn-gs {
+  display: inline-block;
+  font-size: 1.2em;
+  transition: all 0.3s ease-out 0s;
+  padding: 5px 0;
+  width: 160px;
+  border: 2px solid #FFFFFF;
+  background: #FFFFFF;
+  color: #00BCD4;
+}
+
+.main > .why > .control > .btn-gs:hover {
+  background: #00BCD4;
+  color: #FFFFFF;
+}
 
 /* ==========================================================================
    FOOTER
@@ -173,6 +230,12 @@ footer a:hover {
 @media only screen and (max-width: 768px) {
   .main > .rf > img {
     width: 100%;
+  }
+  .main > .why > .reason {
+    flex-direction: column;
+  }
+  .main > .why > .reason > *:not(:last-child) {
+    margin-bottom: 40px;
   }
 }
 
