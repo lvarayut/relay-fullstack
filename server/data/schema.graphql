@@ -2,20 +2,18 @@ schema {
   query: Query
 }
 
-type Feature implements Node {
+type Course implements Node {
   id: ID!
-  name: String
-  description: String
-  url: String
+  coursenum: String
 }
 
-type FeatureConnection {
+type CourseConnection {
   pageInfo: PageInfo!
-  edges: [FeatureEdge]
+  edges: [CourseEdge]
 }
 
-type FeatureEdge {
-  node: Feature
+type CourseEdge {
+  node: Course
   cursor: String!
 }
 
@@ -37,7 +35,7 @@ type Query {
 
 type User implements Node {
   id: ID!
-  features(after: String, first: Int, before: String, last: Int): FeatureConnection
+  courses(after: String, first: Int, before: String, last: Int): CourseConnection
   username: String
   website: String
 }

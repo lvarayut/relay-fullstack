@@ -23,10 +23,10 @@ import {
 
 import {
   User,
-  Feature,
+  Course,
   getUser,
-  getFeature,
-  getFeatures
+  getCourse,
+  getCourses
 } from './database';
 
 
@@ -41,16 +41,16 @@ const { nodeInterface, nodeField } = nodeDefinitions(
     const { type, id } = fromGlobalId(globalId);
     if (type === 'User') {
       return getUser(id);
-    } else if (type === 'Feature') {
-      return getFeature(id);
+    } else if (type === 'Course') {
+      return getCourse(id);
     }
     return null;
   },
   (obj) => {
     if (obj instanceof User) {
       return userType;
-    } else if (obj instanceof Feature) {
-      return featureType;
+    } else if (obj instanceof Course) {
+      return courseType;
     }
     return null;
   }
@@ -65,11 +65,11 @@ const userType = new GraphQLObjectType({
   description: 'A person who uses our app',
   fields: () => ({
     id: globalIdField('User'),
-    features: {
-      type: featureConnection,
-      description: 'Features that I have',
+    courses: {
+      type: courseConnection,
+      description: 'Courses that I have',
       args: connectionArgs,
-      resolve: (_, args) => connectionFromArray(getFeatures(), args)
+      resolve: (_, args) => connectionFromArray(getCourses(), args)
     },
     username: {
       type: GraphQLString,
@@ -83,22 +83,14 @@ const userType = new GraphQLObjectType({
   interfaces: [nodeInterface]
 });
 
-const featureType = new GraphQLObjectType({
-  name: 'Feature',
-  description: 'Feature integrated in our starter kit',
+const courseType = new GraphQLObjectType({
+  name: 'Course',
+  description: 'Courses offered',
   fields: () => ({
-    id: globalIdField('Feature'),
-    name: {
+    id: globalIdField('Course'),
+    coursenum: {
       type: GraphQLString,
-      description: 'Name of the feature'
-    },
-    description: {
-      type: GraphQLString,
-      description: 'Description of the feature'
-    },
-    url: {
-      type: GraphQLString,
-      description: 'Url of the feature'
+      description: 'Course number of the course'
     }
   }),
   interfaces: [nodeInterface]
@@ -107,7 +99,7 @@ const featureType = new GraphQLObjectType({
 /**
  * Define your own connection types here
  */
-const { connectionType: featureConnection } = connectionDefinitions({ name: 'Feature', nodeType: featureType });
+const { connectionType: courseConnection } = connectionDefinitions({ name: 'Course', nodeType: courseType });
 
 /**
  * This is the type that will be the root of our query,

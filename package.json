@@ -1,10 +1,10 @@
 {
-  "name": "relay-fullstack",
-  "version": "1.0.0",
+  "name": "marketplace",
+  "version": "0.1.0",
   "description": "Relay Starter Kit - Integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run lint && npm run start:dev",
-    "start:dev": "nodemon --watch 'server/data/**/*.js' --exec 'npm run update && babel-node server/index.js'",
+    "start:dev": "nodemon --watch 'server/data/**/*.js' --exec 'npm run lint && npm run update && babel-node server/index.js'",
     "start:prod": "webpack && babel-node server/index.js",
     "update": "babel-node server/utils/updateSchema.js",
     "lint": "eslint --ignore-path .gitignore client server"
