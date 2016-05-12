@@ -105,7 +105,6 @@ header > .twitter-share-button {
 .main {
   flex: 1;
   text-align: center;
-  margin: 0 55px;
 }
 
 .main h1 {
@@ -121,18 +120,23 @@ header > .twitter-share-button {
   margin: 15px auto;
 }
 
-.main > .rf > .description {
+.main > .what > .content {
+  margin: 0 20vh;
+}
+
+.main > .what > .content > .description {
+  margin: 20px 0;
   text-align: justify;
   text-indent: 50px;
 }
 
-.main > .rf > img {
+.main > .what > .content > img {
   width: 70%;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .main > .why {
-  margin: 30px -55px 0 -55px;
+  margin-top: 30px;
   padding-top: 20px;
   padding-bottom: 50px;
   background: #F8F8F8;
@@ -140,7 +144,8 @@ header > .twitter-share-button {
 
 .main > .why > .reason {
   display: flex;
-  padding: 40px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
 .main > .why > .reason > * {
@@ -200,12 +205,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-
-/* ==========================================================================
-   MISC
-   ========================================================================== */
-
-
 /* ==========================================================================
    MEDIA
    ========================================================================== */
@@ -219,7 +218,7 @@ footer a:hover {
 /* Medium Devices, Desktops */
 
 @media only screen and (max-width: 992px) {
-  .main > .rf > img {
+  .main > .what > img {
     width: 90%;
   }
 }
@@ -228,7 +227,10 @@ footer a:hover {
 /* Small Devices, Tablets */
 
 @media only screen and (max-width: 768px) {
-  .main > .rf > img {
+  .main > .what > .content {
+    margin: 0 10vh;
+  }
+  .main > .what > .content > img {
     width: 100%;
   }
   .main > .why > .reason {
@@ -248,16 +250,18 @@ footer a:hover {
     margin: 0 auto;
     width: 80%;
   }
+  .main > .what > .content {
+    margin: 0 5vh;
+  }
   header > .control > .btn-gs {
     margin-bottom: 10px;
   }
   header > .control > .btn-demo {
     margin-left: auto;
   }
+  header > .ribbon > img {
+    width: 100px;
+    height: 100px;
+  }
 }
-
-
-/* Custom, iPhone Retina */
-
-@media only screen and (max-width: 320px) {}
 
