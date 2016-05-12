@@ -1,1 +1,1 @@
-web: npm run deploy
+web: NODE_ENV=production npm start
