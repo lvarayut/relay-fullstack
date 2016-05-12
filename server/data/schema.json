@@ -100,7 +100,7 @@
             },
             {
               "kind": "OBJECT",
-              "name": "Feature",
+              "name": "Course",
               "ofType": null
             }
           ]
@@ -127,8 +127,8 @@
               "deprecationReason": null
             },
             {
-              "name": "features",
-              "description": "Features that I have",
+              "name": "courses",
+              "description": "Courses that I have",
               "args": [
                 {
                   "name": "after",
@@ -173,7 +173,7 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "FeatureConnection",
+                "name": "CourseConnection",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -237,7 +237,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "FeatureConnection",
+          "name": "CourseConnection",
           "description": "A connection to a list of items.",
           "fields": [
             {
@@ -265,7 +265,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "FeatureEdge",
+                  "name": "CourseEdge",
                   "ofType": null
                 }
               },
@@ -357,7 +357,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "FeatureEdge",
+          "name": "CourseEdge",
           "description": "An edge in a connection.",
           "fields": [
             {
@@ -366,7 +366,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "Feature",
+                "name": "Course",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -396,8 +396,8 @@
         },
         {
           "kind": "OBJECT",
-          "name": "Feature",
-          "description": "Feature integrated in our starter kit",
+          "name": "Course",
+          "description": "Courses offered",
           "fields": [
             {
               "name": "id",
@@ -416,32 +416,8 @@
               "deprecationReason": null
             },
             {
-              "name": "name",
-              "description": "Name of the feature",
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "description",
-              "description": "Description of the feature",
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "url",
-              "description": "Url of the feature",
+              "name": "coursenum",
+              "description": "Course number of the course",
               "args": [],
               "type": {
                 "kind": "SCALAR",

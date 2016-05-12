@@ -1,11 +1,11 @@
 import Relay from 'react-relay';
-import App from './AppComponent';
+import Course from './CourseComponent';
 
-export default Relay.createContainer(App, {
+export default Relay.createContainer(Course, {
   fragments: {
     viewer: () => Relay.QL`
       fragment on User {
-        courses(first: 10) {
+        courses(first: 20) {
           edges {
             node {
               id,

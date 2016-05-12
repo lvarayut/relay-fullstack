@@ -7,25 +7,28 @@ class User {
   }
 }
 
-class Feature {
-  constructor(id, name, description, url) {
+class Course {
+  constructor(id, coursenum) {
     this.id = id;
-    this.name = name;
-    this.description = description;
-    this.url = url;
+    this.coursenum = coursenum;
   }
 }
 
 const lvarayut = new User('1', 'Varayut Lerdkanlayanawat', 'lvarayut', 'https://github.com/lvarayut/relay-fullstack');
-const features = [
-  new Feature('1', 'React', 'A JavaScript library for building user interfaces.', 'https://facebook.github.io/react'),
-  new Feature('2', 'Relay', 'A JavaScript framework for building data-driven react applications.', 'https://facebook.github.io/relay'),
-  new Feature('3', 'GraphQL', 'A reference implementation of GraphQL for JavaScript.', 'http://graphql.org'),
-  new Feature('4', 'Express', 'Fast, unopinionated, minimalist web framework for Node.js.', 'http://expressjs.com'),
-  new Feature('5', 'Webpack', 'Webpack is a module bundler that packs modules for the browser.', 'https://webpack.github.io'),
-  new Feature('6', 'Babel', 'Babel is a JavaScript compiler. Use next generation JavaScript, today.', 'https://babeljs.io'),
-  new Feature('7', 'PostCSS', 'PostCSS. A tool for transforming CSS with JavaScript.', 'http://postcss.org'),
-  new Feature('8', 'MDL', 'Material Design Lite lets you add a Material Design to your websites.', 'http://www.getmdl.io')
+const courses = [
+  new Course('1', 'COMP-011-01'),
+  new Course('2', 'COMP-011-02'),
+  new Course('3', 'COMP-011-03'),
+  new Course('4', 'COMP-011-04'),
+  new Course('5', 'COMP-011-05'),
+  new Course('6', 'COMP-040-01'),
+  new Course('7', 'COMP-040-02'),
+  new Course('8', 'COMP-040-03'),
+  new Course('9', 'COMP-040-04'),
+  new Course('10', 'COMP-040-05'),
+  new Course('11', 'COMP-040-06'),
+  new Course('12', 'ENG-022-01'),
+  new Course('13', 'ENG-022-02')
 ];
 
 
@@ -33,18 +36,18 @@ function getUser(id) {
   return id === lvarayut.id ? lvarayut : null;
 }
 
-function getFeature(id) {
-  return features.find(w => w.id === id);
+function getCourse(id) {
+  return courses.find(w => w.id === id);
 }
 
-function getFeatures() {
-  return features;
+function getCourses() {
+  return courses;
 }
 
 export {
   User,
-  Feature,
+  Course,
   getUser,
-  getFeature,
-  getFeatures
+  getCourse,
+  getCourses
 };
