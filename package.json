@@ -1,0 +1,51 @@
+{
+  "name": "generator-relay-fullstack",
+  "version": "0.0.0",
+  "description": "Relay Starter Kit integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS",
+  "homepage": "lvarayut.github.io/relay-fullstack",
+  "author": {
+    "name": "Varayut Lerdkanlayanawat",
+    "email": "l.varayut@gmail.com",
+    "url": "https://github.com/lvarayut"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "repository": "https://github.com/lvarayut/relay-fullstack/tree/yeoman-generator",
+  "scripts": {
+    "test": "ava test --verbose"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "react",
+    "relay",
+    "graphql",
+    "express",
+    "es6",
+    "es7",
+    "jsx",
+    "webpack",
+    "babel",
+    "material design lite",
+    "postcss",
+    "scaffolding",
+    "fullstack",
+    "yeoman",
+    "generator",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.23.0",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.14.0",
+    "yeoman-assert": "^2.0.0",
+    "yeoman-test": "^1.0.0"
+  },
+  "license": "MIT"
+}
