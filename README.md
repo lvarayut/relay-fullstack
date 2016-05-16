@@ -144,4 +144,4 @@ $ npm run update
 
 ## License
 
-[The MIT License](http://opensource.org/licenses/MIT)
+MIT © [Varayut Lerdkanlayanawat](https://github.com/lvarayut)
