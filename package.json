@@ -13,6 +13,8 @@
   },
   "repository": "https://github.com/lvarayut/relay-fullstack/tree/yeoman-generator",
   "scripts": {
+    "prepublish": "npm lint && npm test",
+    "lint": "eslint --ignore-pattern generators/app/templates/relay-fullstack generators",
     "test": "ava test --verbose"
   },
   "files": [
@@ -44,6 +46,10 @@
   },
   "devDependencies": {
     "ava": "^0.14.0",
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.0",
+    "eslint-plugin-jsx-a11y": "^1.2.0",
     "yeoman-assert": "^2.0.0",
     "yeoman-test": "^1.0.0"
   },
