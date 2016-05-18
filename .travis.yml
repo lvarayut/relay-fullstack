@@ -3,3 +3,4 @@ node_js:
   - v6
   - v5
   - v4
+after_success: npm run coveralls
