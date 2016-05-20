@@ -1,7 +1,7 @@
 {
-  "name": "relay-fullstack",
+  "name": "<%= moduleName %>",
   "version": "1.0.0",
-  "description": "Relay Starter Kit - Integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS",
+  "description": "<%= appName %>, Powered by Relay Fullstack",
   "scripts": {
     "start": "nodemon --watch 'server/data/**/*.js' --exec 'npm run update && babel-node server/index.js'",
     "update": "babel-node server/utils/updateSchema.js",
