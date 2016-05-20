@@ -1,4 +1,4 @@
 [submodule "relay-fullstack"]
 	path = generators/app/templates/relay-fullstack
-	url = git@github.com:lvarayut/relay-fullstack.git
+	url = https://github.com/lvarayut/relay-fullstack.git
 	branch = canary
