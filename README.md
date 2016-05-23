@@ -16,6 +16,10 @@
 
 ## Usage
 
+### Basic
+
+The basic installation contains only general technologies needed by most of the projects, Relay Fullstack is totally unopinionated. If you wanted to include a database, flow, or any specific technologies, please see the [Advance](#advance) section.
+
 Clone the repository to your local directory
 ```bash
 $ git clone https://github.com/lvarayut/relay-fullstack.git
@@ -29,6 +33,28 @@ $ npm start
 ```
 
 Launch your favorite web browser and go to `http://localhost:3000` for Relay application or `http://localhost:8000` for GraphiQL. 
+
+### Advance
+
+Relay Fullstack is integrated with Yeoman that allows you to choose technologies that suit your needs, the options are including database, flow, and etc.
+
+Install `yo` and [generator-relay-fullstack](https://www.npmjs.com/package/generator-relay-fullstack) globally
+
+```bash
+$ npm install -g yo generator-relay-fullstack
+```
+
+Create a new directory and start the generator, it will prompt some questions to help you get up and running
+
+```bash
+$ mkdir relay-fullstack && cd $_
+$ yo relay-fullstack
+$ npm start
+```
+
+Launch your favorite web browser and go to `http://localhost:3000` for Relay application or `http://localhost:8000` for GraphiQL. 
+
+> NOTE: generator-relay-fullstack is currently working with minimal functionalities. Database, Flow, and Sub-generator are work-in-progress.
 
 ## Deployment
 
