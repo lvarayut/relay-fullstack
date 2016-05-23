@@ -15,17 +15,18 @@
 
 ## Usage
 
-Install `yo` and `generator-relay-fullstack` globally
+Install `yo` and [generator-relay-fullstack](https://www.npmjs.com/package/generator-relay-fullstack) globally
 
 ```bash
 $ npm install -g yo generator-relay-fullstack
 ```
 
-Make a new directory and start the generator, it will prompt some questions to help you get up and running
+Create a new directory and start the generator, it will prompt some questions to help you get up and running
 
 ```bash
 $ mkdir relay-fullstack && cd $_
 $ yo relay-fullstack
+$ npm start
 ```
 
 Launch your favorite web browser and go to http://localhost:3000 for Relay application or http://localhost:8000 for GraphiQL.
