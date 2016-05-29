@@ -1,21 +1,22 @@
 @import '../variables.scss';
 
-.mdl-layout-title a {
-  color: $white;
-  text-decoration: none;
-  font-weight: normal;
-}
+.root :global {
+  .mdl-layout-title a {
+    color: $white;
+    text-decoration: none;
+    font-weight: normal;
+  }
 
-.mdl-layout__header-row .mdl-navigation__link {
-  color: $white !important;
-}
+  .mdl-layout__header-row .mdl-navigation__link {
+    color: $white !important;
+  }
 
-.mdl-layout__drawer > .mdl-layout-title {
-  padding-top: 36px;
-  background-color: $blue;
-}
+  .mdl-layout__drawer > .mdl-layout-title {
+    padding-top: 36px;
+    background-color: $blue;
+  }
 
-.mdl-layout__drawer-button {
-  color: $white !important;
+  .mdl-layout__drawer-button {
+    color: $white !important;
+  }
 }
-

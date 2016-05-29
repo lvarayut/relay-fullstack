@@ -1,7 +1,9 @@
 import React from 'react';
+import 'normalize.css/normalize.css';
+import 'react-mdl/extra/css/material.cyan-red.min.css';
 import Navbar from '../Navbar/NavbarComponent';
 import Footer from '../Footer/FooterContainer';
-import './App.scss';
+import styles from './App.scss';
 import yeoman from '../../assets/yeoman.png';
 
 export default class App extends React.Component {
@@ -12,14 +14,14 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className='app'>
+      <div className={styles.root}>
         <Navbar />
-        <div className='greeting'>
-          <h1>Sawasdee, Sawasdee!</h1>
+        <div className={styles.greeting}>
+          <h1 className={styles.sawasdee}>Sawasdee, Sawasdee!</h1>
           <p>Always a pleasure scaffolding your apps</p>
           <img src={yeoman} alt='yeoman' />
         </div>
-        <div className='content'>
+        <div className={styles.content}>
           {this.props.children}
         </div>
         <Footer viewer={this.props.viewer} />
@@ -27,4 +29,3 @@ export default class App extends React.Component {
     );
   }
 }
-

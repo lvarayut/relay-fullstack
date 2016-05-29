@@ -1,44 +1,28 @@
-@import '../../../node_modules/normalize.css/normalize.css';
-@import '../../../node_modules/react-mdl/extra/css/material.cyan-red.min.css';
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import '../variables.scss';
 
-.app {
+.root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-h1 {
+.greeting {
+  background-color: $blue;
+  color: $white;
+  height: 330px;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.sawasdee {
   font-size: 2.5em;
   font-weight: normal;
-}
-
-h2 {
-  font-size: 2em;
-  font-weight: normal;
-}
-
-.greeting {
-  text-align: center;
-  padding-top: 50px;
-  height: 330px;
-  color: $white;
-  background-color: $blue;
 }
 
 .content {
   flex: 1;
   margin: 10px 50px;
-
-  .tools {
-    img {
-      padding: 13px;
-      width: 55px;
-      height: 55px;
-      text-align: center;
-    }
-  }
 }
 
 /**
