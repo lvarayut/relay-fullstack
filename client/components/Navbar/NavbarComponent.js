@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { Layout, Header, Navigation, Drawer } from 'react-mdl';
-import './Navbar.scss';
+import styles from './Navbar.scss';
 
 export default class Navbar extends React.Component {
   render() {
     const title = 'Relay Fullstack';
     return (
-      <Layout>
+      <Layout className={styles.root}>
         <Header title={<Link to='/'>{title}</Link>} scroll>
           <Navigation>
             <Link to='/signup'>Sign up</Link>
@@ -24,4 +24,3 @@ export default class Navbar extends React.Component {
     );
   }
 }
-

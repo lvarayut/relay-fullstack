@@ -1,12 +1,11 @@
 import React from 'react';
 import { Grid, Cell, Textfield, Button } from 'react-mdl';
+import Page from '../Page/PageComponent';
 
 export default class Signup extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Signup</h1>
-        <hr />
+      <Page heading='Signup'>
         <div style={{ width: '70%', margin: 'auto' }}>
           <Grid>
             <form style={{ margin: 'auto' }}>
@@ -22,7 +21,7 @@ export default class Signup extends React.Component {
             </form>
           </Grid>
         </div>
-      </div>
+      </Page>
     );
   }
 }

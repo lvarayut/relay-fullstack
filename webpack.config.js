@@ -26,8 +26,15 @@ module.exports = {
       loader: 'babel-loader',
       exclude: /node_modules/
     }, {
+      test: /\.css$/,
+      loaders: ['style', 'css']
+    }, {
       test: /\.scss$/,
-      loaders: ['style-loader', 'css-loader', 'postcss-loader']
+      loaders: [
+        'style',
+        'css?modules&importLoaders=1' +
+          '&localIdentName=[name]__[local]___[hash:base64:5]!postcss'
+      ]
     }, {
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
       loader: 'url-loader?limit=10000&name=assets/[hash].[ext]'
@@ -48,4 +55,3 @@ module.exports = {
     })
   ]
 };
-
