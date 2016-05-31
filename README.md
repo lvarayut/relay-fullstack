@@ -16,6 +16,10 @@
 
 ## Usage
 
+### Basic
+
+The basic installation contains only general technologies needed by most of the projects, Relay Fullstack is totally unopinionated. If you wanted to include a database, flow, or any specific technologies, please see the [Advance](#advance) section.
+
 Clone the repository to your local directory
 ```bash
 $ git clone https://github.com/lvarayut/relay-fullstack.git
@@ -29,6 +33,28 @@ $ npm start
 ```
 
 Launch your favorite web browser and go to `http://localhost:3000` for Relay application or `http://localhost:8000` for GraphiQL. 
+
+### Advance
+
+Relay Fullstack is integrated with Yeoman that allows you to choose technologies that suit your needs, the options are including database, flow, and etc.
+
+Install `yo` and [generator-relay-fullstack](https://www.npmjs.com/package/generator-relay-fullstack) globally
+
+```bash
+$ npm install -g yo generator-relay-fullstack
+```
+
+Create a new directory and start the generator, it will prompt some questions to help you get up and running
+
+```bash
+$ mkdir relay-fullstack && cd $_
+$ yo relay-fullstack
+$ npm start
+```
+
+Launch your favorite web browser and go to `http://localhost:3000` for Relay application or `http://localhost:8000` for GraphiQL. 
+
+> NOTE: generator-relay-fullstack is currently working with minimal functionalities. Database, Flow, and Sub-generator are work-in-progress.
 
 ## Deployment
 
@@ -137,10 +163,9 @@ $ npm run update
 
 ## Contributors
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [![lvarayut](https://avatars.githubusercontent.com/u/4281887?v=3&s=120)<br /><sub>lvarayut</sub>](https://github.com/lvarayut)<br /> | [![ianaya89](https://avatars.githubusercontent.com/u/3258966?v=3&s=120)<br /><sub>ianaya89</sub>](https://github.com/ianaya89)<br /> | [![kennydee](https://avatars.githubusercontent.com/u/1484406?v=3&s=120)<br /><sub>kennydee</sub>](https://github.com/kennydee)<br /> | [![jg123](https://avatars.githubusercontent.com/u/693277?v=3&s=120)<br /><sub>jg123</sub>](https://github.com/jg123)<br /> |
-| :---: | :---: | :---: | :---: |
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+[<img alt="lvarayut" src="https://avatars.githubusercontent.com/u/4281887?v=3&s=117" width="117">](https://github.com/lvarayut) |[<img alt="ianaya89" src="https://avatars.githubusercontent.com/u/3258966?v=3&s=117" width="117">](https://github.com/ianaya89) |[<img alt="jg123" src="https://avatars.githubusercontent.com/u/693277?v=3&s=117" width="117">](https://github.com/jg123) |[<img alt="kennydee" src="https://avatars.githubusercontent.com/u/1484406?v=3&s=117" width="117">](https://github.com/kennydee) |[<img alt="lexun" src="https://avatars.githubusercontent.com/u/1910143?v=3&s=117" width="117">](https://github.com/lexun) |
+:---: |:---: |:---: |:---: |:---: |
+[lvarayut](https://github.com/lvarayut) |[ianaya89](https://github.com/ianaya89) |[jg123](https://github.com/jg123) |[kennydee](https://github.com/kennydee) |[lexun](https://github.com/lexun) |
 
 ## License
 
