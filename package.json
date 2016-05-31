@@ -1,6 +1,6 @@
 {
   "name": "generator-relay-fullstack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Relay Starter Kit integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS",
   "homepage": "lvarayut.github.io/relay-fullstack",
   "author": {
@@ -47,12 +47,12 @@
     "yosay": "^1.1.1"
   },
   "devDependencies": {
-    "ava": "^0.14.0",
+    "ava": "^0.15.1",
     "coveralls": "^2.11.9",
-    "eslint": "^2.10.2",
+    "eslint": "^2.11.1",
     "eslint-config-airbnb": "^9.0.1",
-    "eslint-plugin-import": "^1.8.0",
-    "eslint-plugin-jsx-a11y": "^1.2.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.2.2",
     "eslint-plugin-react": "^5.1.1",
     "nyc": "^6.4.4",
     "yeoman-assert": "^2.2.1",
