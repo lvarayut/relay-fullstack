@@ -163,10 +163,9 @@ $ npm run update
 
 ## Contributors
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [![lvarayut](https://avatars.githubusercontent.com/u/4281887?v=3&s=120)<br /><sub>lvarayut</sub>](https://github.com/lvarayut)<br /> | [![ianaya89](https://avatars.githubusercontent.com/u/3258966?v=3&s=120)<br /><sub>ianaya89</sub>](https://github.com/ianaya89)<br /> | [![kennydee](https://avatars.githubusercontent.com/u/1484406?v=3&s=120)<br /><sub>kennydee</sub>](https://github.com/kennydee)<br /> | [![jg123](https://avatars.githubusercontent.com/u/693277?v=3&s=120)<br /><sub>jg123</sub>](https://github.com/jg123)<br /> |
-| :---: | :---: | :---: | :---: |
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+[<img alt="lvarayut" src="https://avatars.githubusercontent.com/u/4281887?v=3&s=117" width="117">](https://github.com/lvarayut) |[<img alt="ianaya89" src="https://avatars.githubusercontent.com/u/3258966?v=3&s=117" width="117">](https://github.com/ianaya89) |[<img alt="jg123" src="https://avatars.githubusercontent.com/u/693277?v=3&s=117" width="117">](https://github.com/jg123) |[<img alt="kennydee" src="https://avatars.githubusercontent.com/u/1484406?v=3&s=117" width="117">](https://github.com/kennydee) |[<img alt="lexun" src="https://avatars.githubusercontent.com/u/1910143?v=3&s=117" width="117">](https://github.com/lexun) |
+:---: |:---: |:---: |:---: |:---: |
+[lvarayut](https://github.com/lvarayut) |[ianaya89](https://github.com/ianaya89) |[jg123](https://github.com/jg123) |[kennydee](https://github.com/kennydee) |[lexun](https://github.com/lexun) |
 
 ## License
 
