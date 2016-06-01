@@ -14,7 +14,7 @@ describe('schema', ()=>{
     assert.deepEqual(queryResult.data, {viewer:{username:"lvarayut"}});
   });
 
-  it("invalid/unregistered query is bound to fail as is not defined in graphql schema", async ()=>{//not relevant message vs results
+  it("invalid/unregistered query is bound to fail as is not defined in graphql schema", async ()=>{
     let query = '{Feature(id:"RmVhdHVyZTox"){name}}';
     let featureResult = await graphql(schema, query);
     assert.equal(featureResult.errors[0].message, {feature:{id:"RmVhdHVyZTox"}});
