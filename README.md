@@ -115,8 +115,7 @@ $ npm run update
     │   │   └── updateSchema.js         - Code for compiling the defined schema to schema.json and schema.graphql
     │   └── index.js                    - Server entry point
     ├── package.json                    - List of dependencies
-    ├── webpack.config.js               - Webpack configuration for development environment
-    └── webpack.production.config.js    - Webpack configuration for production environment
+    ├── webpack.config.js               - Webpack configuration
 
 ## Technologies
 
