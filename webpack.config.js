@@ -1,12 +1,14 @@
+'use-strict';
+
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const precss = require('precss');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-let appEntry;
-let devtool;
-let plugins;
+var appEntry;
+var devtool;
+var plugins;
 if (process.env.NODE_ENV === 'production') {
   appEntry = [path.join(__dirname, 'client/index.js')];
   devtool = 'source-map';
