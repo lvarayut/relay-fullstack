@@ -162,9 +162,9 @@ $ npm run update
 
 ## Contributors
 
-[<img alt="lvarayut" src="https://avatars.githubusercontent.com/u/4281887?v=3&s=117" width="117">](https://github.com/lvarayut) |[<img alt="ianaya89" src="https://avatars.githubusercontent.com/u/3258966?v=3&s=117" width="117">](https://github.com/ianaya89) |[<img alt="jg123" src="https://avatars.githubusercontent.com/u/693277?v=3&s=117" width="117">](https://github.com/jg123) |[<img alt="kennydee" src="https://avatars.githubusercontent.com/u/1484406?v=3&s=117" width="117">](https://github.com/kennydee) |[<img alt="lexun" src="https://avatars.githubusercontent.com/u/1910143?v=3&s=117" width="117">](https://github.com/lexun) |
-:---: |:---: |:---: |:---: |:---: |
-[lvarayut](https://github.com/lvarayut) |[ianaya89](https://github.com/ianaya89) |[jg123](https://github.com/jg123) |[kennydee](https://github.com/kennydee) |[lexun](https://github.com/lexun) |
+[<img alt="lvarayut" src="https://avatars.githubusercontent.com/u/4281887?v=3&s=117" width="117">](https://github.com/lvarayut) |[<img alt="ianaya89" src="https://avatars.githubusercontent.com/u/3258966?v=3&s=117" width="117">](https://github.com/ianaya89) |[<img alt="jtfell" src="https://avatars.githubusercontent.com/u/6702746?v=3&s=117" width="117">](https://github.com/jtfell) |[<img alt="jg123" src="https://avatars.githubusercontent.com/u/693277?v=3&s=117" width="117">](https://github.com/jg123) |[<img alt="kennydee" src="https://avatars.githubusercontent.com/u/1484406?v=3&s=117" width="117">](https://github.com/kennydee) |[<img alt="lexun" src="https://avatars.githubusercontent.com/u/1910143?v=3&s=117" width="117">](https://github.com/lexun) |
+:---: |:---: |:---: |:---: |:---: |:---: |
+[lvarayut](https://github.com/lvarayut) |[ianaya89](https://github.com/ianaya89) |[jtfell](https://github.com/jtfell) |[jg123](https://github.com/jg123) |[kennydee](https://github.com/kennydee) |[lexun](https://github.com/lexun) |
 
 ## License
 
