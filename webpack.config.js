@@ -4,9 +4,9 @@ const autoprefixer = require('autoprefixer');
 const precss = require('precss');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var appEntry;
-var devtool;
-var plugins;
+let appEntry;
+let devtool;
+let plugins;
 if (process.env.NODE_ENV === 'production') {
   appEntry = [path.join(__dirname, 'client/index.js')];
   devtool = 'source-map';
