@@ -156,6 +156,8 @@ $ npm run update
 
 [Nodemon](http://nodemon.io) - Monitor for any changes in your node.js application and automatically restart the server.
 
+[CSS Modules](https://github.com/css-modules/css-modules) - CSS file in which all class names and animation names are scoped locally by default.
+
 ## Credits
 - Relay Fullstack is inspired by [relay-starter-kit](https://github.com/relayjs/relay-starter-kit). Please take a look at the original code to learn more.
 - Handcrafted with ♥ by Varayut Lerdkanlayanawat.
@@ -165,6 +167,10 @@ $ npm run update
 [<img alt="lvarayut" src="https://avatars.githubusercontent.com/u/4281887?v=3&s=117" width="117">](https://github.com/lvarayut) |[<img alt="ianaya89" src="https://avatars.githubusercontent.com/u/3258966?v=3&s=117" width="117">](https://github.com/ianaya89) |[<img alt="jtfell" src="https://avatars.githubusercontent.com/u/6702746?v=3&s=117" width="117">](https://github.com/jtfell) |[<img alt="jg123" src="https://avatars.githubusercontent.com/u/693277?v=3&s=117" width="117">](https://github.com/jg123) |[<img alt="kennydee" src="https://avatars.githubusercontent.com/u/1484406?v=3&s=117" width="117">](https://github.com/kennydee) |[<img alt="lexun" src="https://avatars.githubusercontent.com/u/1910143?v=3&s=117" width="117">](https://github.com/lexun) |
 :---: |:---: |:---: |:---: |:---: |:---: |
 [lvarayut](https://github.com/lvarayut) |[ianaya89](https://github.com/ianaya89) |[jtfell](https://github.com/jtfell) |[jg123](https://github.com/jg123) |[kennydee](https://github.com/kennydee) |[lexun](https://github.com/lexun) |
+
+[<img alt="sankalpk" src="https://avatars.githubusercontent.com/u/1317291?v=3&s=117" width="117">](https://github.com/sankalpk) |
+:---: |
+[sankalpk](https://github.com/sankalpk) |
 
 ## License
 
