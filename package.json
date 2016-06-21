@@ -63,7 +63,7 @@
     "css-loader": "^0.23.1",
     "express": "^4.13.4",
     "express-graphql": "^0.5.3",
-    "file-loader": "^0.8.5",
+    "file-loader": "^0.9.0",
     "graphql": "^0.6.0",
     "graphql-relay": "^0.4.2",
     "html-webpack-plugin": "^2.19.0",
