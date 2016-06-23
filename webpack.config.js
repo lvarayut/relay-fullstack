@@ -1,25 +1,70 @@
 'use strict';
 
-var path = require('path');
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var precss = require('precss');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const precss = require('precss');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+let appEntry;
+let devtool;
+let plugins;
+if (process.env.NODE_ENV === 'production') {
+  appEntry = [path.join(__dirname, 'client/index.js')];
+  devtool = 'source-map';
+  plugins = [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+        screw_ie8: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      title: '<%= appName %>, Powered by Relay Fullstack',
+      template: './client/index.html',
+      mobile: true,
+      inject: false
+    })
+  ];
+} else {
+  appEntry = [
+    path.join(__dirname, 'client/index.js'),
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server'
+  ];
+  devtool = 'eval';
+  plugins = [
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+    new webpack.NoErrorsPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      title: '<%= appName %>, Powered by Relay Fullstack',
+      template: './client/index.html',
+      mobile: true,
+      inject: false
+    })
+  ];
+}
 
 module.exports = {
   entry: {
-    app: [
-      path.join(__dirname, 'client/index.js'),
-      'webpack-dev-server/client?http://localhost:3000',
-      'webpack/hot/only-dev-server'
-    ],
+    app: appEntry,
     vendor: ['react', 'react-dom', 'react-mdl', 'react-relay', 'react-router', 'react-router-relay']
   },
   output: {
     path: path.join(__dirname, 'build'),
+    publicPath: '/',
     filename: '[name].js'
   },
-  devtool: 'eval',
+  devtool,
   module: {
     loaders: [{
       test: /\.jsx?$/,
@@ -40,18 +85,6 @@ module.exports = {
       loader: 'url-loader?limit=10000&name=assets/[hash].[ext]'
     }]
   },
-  postcss: function() {
-    return [precss, autoprefixer];
-  },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
-    new webpack.NoErrorsPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      title: '<%= appName %>, Powered by Relay Fullstack',
-      template: './client/index.html',
-      mobile: true,
-      inject: false
-    })
-  ]
+  postcss: () => [precss, autoprefixer],
+  plugins
 };
