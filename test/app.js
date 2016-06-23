@@ -25,7 +25,6 @@ test('binds appName and moduleName', () => {
   assert.fileContent('package.json', /"name": "awesome-project"/);
   assert.fileContent('package.json', /"description": "Awesome Project, Powered by Relay Fullstack"/);
   assert.fileContent('webpack.config.js', /title: 'Awesome Project, Powered by Relay Fullstack'/);
-  assert.fileContent('webpack.production.config.js', /title: 'Awesome Project, Powered by Relay Fullstack'/);
   assert.fileContent('client/components/Navbar/NavbarComponent.js', /const title = 'Awesome Project'/);
 });
 
