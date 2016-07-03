@@ -13,7 +13,7 @@ export default class Signup extends React.Component {
                 <Textfield onChange={() => {}} label='Username' />
               </Cell>
               <Cell col={12}>
-                <Textfield onChange={() => {}} label='Password' />
+                <Textfield onChange={() => {}} label='Password' type='password' />
               </Cell>
               <Cell col={12} style={{ textAlign: 'right' }}>
                 <Button primary>Sign up</Button>
