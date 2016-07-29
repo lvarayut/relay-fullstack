@@ -5,10 +5,12 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const precss = require('precss');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 let appEntry;
 let devtool;
 let plugins;
+
 if (process.env.NODE_ENV === 'production') {
   appEntry = [path.join(__dirname, 'client/index.js')];
   devtool = 'source-map';
@@ -32,7 +34,8 @@ if (process.env.NODE_ENV === 'production') {
       template: './client/index.html',
       mobile: true,
       inject: false
-    })
+    }),
+    new FaviconsWebpackPlugin('./client/assets/logo.png')
   ];
 } else {
   appEntry = [
@@ -53,7 +56,8 @@ if (process.env.NODE_ENV === 'production') {
       template: './client/index.html',
       mobile: true,
       inject: false
-    })
+    }),
+    new FaviconsWebpackPlugin('./client/assets/logo.png')
   ];
 }
 
