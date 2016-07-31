@@ -3,14 +3,14 @@ schema {
   mutation: Mutation
 }
 
-input CreateFeatureInput {
+input AddFeatureInput {
   name: String!
   description: String!
   url: String!
   clientMutationId: String!
 }
 
-type CreateFeaturePayload {
+type AddFeaturePayload {
   featureEdge: FeatureEdge
   viewer: User
   clientMutationId: String!
@@ -34,7 +34,7 @@ type FeatureEdge {
 }
 
 type Mutation {
-  createFeature(input: CreateFeatureInput!): CreateFeaturePayload
+  addFeature(input: AddFeatureInput!): AddFeaturePayload
 }
 
 interface Node {

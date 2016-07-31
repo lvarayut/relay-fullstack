@@ -115,8 +115,8 @@ const { connectionType: featureConnection, edgeType: featureEdge } = connectionD
  * Create feature example
  */
 
-const createFeatureMutation = mutationWithClientMutationId({
-  name: 'CreateFeature',
+const addFeatureMutation = mutationWithClientMutationId({
+  name: 'AddFeature',
   inputFields: {
     name: { type: new GraphQLNonNull(GraphQLString) },
     description: { type: new GraphQLNonNull(GraphQLString) },
@@ -164,7 +164,7 @@ const queryType = new GraphQLObjectType({
 const mutationType = new GraphQLObjectType({
   name: 'Mutation',
   fields: () => ({
-    createFeature: createFeatureMutation
+    addFeature: addFeatureMutation
     // Add your own mutations here
   })
 });

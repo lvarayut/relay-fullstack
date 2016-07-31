@@ -1,10 +1,10 @@
 import Relay from 'react-relay';
 
-class CreateFeatureMutation extends Relay.Mutation {
+class AddFeatureMutation extends Relay.Mutation {
 
   getMutation() {
     return Relay.QL`
-      mutation { createFeature }
+      mutation { addFeature }
     `;
   }
 
@@ -18,7 +18,7 @@ class CreateFeatureMutation extends Relay.Mutation {
 
   getFatQuery() {
     return Relay.QL`
-      fragment on CreateFeaturePayload {
+      fragment on AddFeaturePayload {
         featureEdge,
         viewer { features }
       }
@@ -39,4 +39,4 @@ class CreateFeatureMutation extends Relay.Mutation {
   }
 }
 
-export default CreateFeatureMutation;
+export default AddFeatureMutation;

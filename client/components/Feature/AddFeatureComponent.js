@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Cell, Button } from 'react-mdl';
 import Page from '../Page/PageComponent';
 import Dropdown from 'react-dropdown';
-import CreateFeatureMutation from '../../mutation/CreateFeatureMutation';
+import AddFeatureMutation from '../../mutation/AddFeatureMutation';
 import Relay from 'react-relay';
 
 const options = [
@@ -39,8 +39,8 @@ export default class Feature extends React.Component {
       return;
     }
 
-    const featureMutation = new CreateFeatureMutation({ viewerId: this.props.viewer.id, ...inputData[value] });
-    Relay.Store.commitUpdate(featureMutation);
+    const addFeatureMutation = new AddFeatureMutation({ viewerId: this.props.viewer.id, ...inputData[value] });
+    Relay.Store.commitUpdate(addFeatureMutation);
   }
 
   render() {

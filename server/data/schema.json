@@ -471,7 +471,7 @@
           "description": null,
           "fields": [
             {
-              "name": "createFeature",
+              "name": "addFeature",
               "description": null,
               "args": [
                 {
@@ -482,7 +482,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "CreateFeatureInput",
+                      "name": "AddFeatureInput",
                       "ofType": null
                     }
                   },
@@ -491,7 +491,7 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "CreateFeaturePayload",
+                "name": "AddFeaturePayload",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -505,7 +505,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "CreateFeatureInput",
+          "name": "AddFeatureInput",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -572,7 +572,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "CreateFeaturePayload",
+          "name": "AddFeaturePayload",
           "description": null,
           "fields": [
             {
