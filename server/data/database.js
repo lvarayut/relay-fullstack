@@ -28,6 +28,19 @@ const features = [
   new Feature('8', 'MDL', 'Material Design Lite lets you add a Material Design to your websites.', 'http://www.getmdl.io')
 ];
 
+/*
+* Add feature in memory
+*/
+
+let curFeatures = 9;
+function addFeature(name, description, url) {
+  const newFeature = new Feature(curFeatures, name, description, url);
+  features.push(newFeature);
+  newFeature.id = curFeatures;
+  curFeatures++;
+  return newFeature;
+}
+
 
 function getUser(id) {
   return id === lvarayut.id ? lvarayut : null;
@@ -46,5 +59,6 @@ export {
   Feature,
   getUser,
   getFeature,
-  getFeatures
+  getFeatures,
+  addFeature
 };
