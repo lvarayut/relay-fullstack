@@ -168,9 +168,9 @@ $ npm run update
 :---: |:---: |:---: |:---: |:---: |:---: |
 [lvarayut](https://github.com/lvarayut) |[ianaya89](https://github.com/ianaya89) |[kennydee](https://github.com/kennydee) |[jtfell](https://github.com/jtfell) |[jg123](https://github.com/jg123) |[lexun](https://github.com/lexun) |
 
-[<img alt="ncrmro" src="https://avatars.githubusercontent.com/u/8276365?v=3&s=117" width="117">](https://github.com/ncrmro) |[<img alt="sankalpk" src="https://avatars.githubusercontent.com/u/1317291?v=3&s=117" width="117">](https://github.com/sankalpk) |
-:---: |:---: |
-[ncrmro](https://github.com/ncrmro) |[sankalpk](https://github.com/sankalpk) |
+[<img alt="zenyai" src="https://avatars.githubusercontent.com/u/1563323?v=3&s=117" width="117">](https://github.com/zenyai) |[<img alt="ncrmro" src="https://avatars.githubusercontent.com/u/8276365?v=3&s=117" width="117">](https://github.com/ncrmro) |[<img alt="sankalpk" src="https://avatars.githubusercontent.com/u/1317291?v=3&s=117" width="117">](https://github.com/sankalpk) |
+:---: |:---: |:---: |
+[zenyai](https://github.com/zenyai) |[ncrmro](https://github.com/ncrmro) |[sankalpk](https://github.com/sankalpk) |
 
 ## License
 
