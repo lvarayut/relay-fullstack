@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Relay Starter Kit - Integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS",
   "scripts": {
-    "start": "nodemon --watch 'server/data/**/*.js' --exec 'npm run update && babel-node server/index.js'",
+    "start": "nodemon --watch server/data/**/*.js --exec \"npm run update && babel-node server/index.js\"",
     "update": "babel-node server/utils/updateSchema.js",
     "deploy": "cross-env NODE_ENV=production webpack --config webpack.config.js && npm run update && cross-env NODE_ENV=production babel-node server/index.js",
     "lint": "eslint --ignore-path .gitignore client server"
