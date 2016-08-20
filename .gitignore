@@ -37,7 +37,3 @@ build/
 *.swp
 *.vim
 
-# --------------------
-# MISC
-# --------------------
-.all-contributorsrc

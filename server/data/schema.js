@@ -18,7 +18,8 @@ import {
   fromGlobalId,
   globalIdField,
   mutationWithClientMutationId,
-  nodeDefinitions
+  nodeDefinitions,
+  cursorForObjectInConnection
 } from 'graphql-relay';
 
 import {
@@ -26,7 +27,8 @@ import {
   Feature,
   getUser,
   getFeature,
-  getFeatures
+  getFeatures,
+  addFeature
 } from './database';
 
 
@@ -107,7 +109,37 @@ const featureType = new GraphQLObjectType({
 /**
  * Define your own connection types here
  */
-const { connectionType: featureConnection } = connectionDefinitions({ name: 'Feature', nodeType: featureType });
+const { connectionType: featureConnection, edgeType: featureEdge } = connectionDefinitions({ name: 'Feature', nodeType: featureType });
+
+/**
+ * Create feature example
+ */
+
+const addFeatureMutation = mutationWithClientMutationId({
+  name: 'AddFeature',
+  inputFields: {
+    name: { type: new GraphQLNonNull(GraphQLString) },
+    description: { type: new GraphQLNonNull(GraphQLString) },
+    url: { type: new GraphQLNonNull(GraphQLString) },
+  },
+
+  outputFields: {
+    featureEdge: {
+      type: featureEdge,
+      resolve: (obj) => {
+        const cursorId = cursorForObjectInConnection(getFeatures(), obj);
+        return { node: obj, cursor: cursorId };
+      }
+    },
+    viewer: {
+      type: userType,
+      resolve: () => getUser('1')
+    }
+  },
+
+  mutateAndGetPayload: ({ name, description, url }) => addFeature(name, description, url)
+});
+
 
 /**
  * This is the type that will be the root of our query,
@@ -132,6 +164,7 @@ const queryType = new GraphQLObjectType({
 const mutationType = new GraphQLObjectType({
   name: 'Mutation',
   fields: () => ({
+    addFeature: addFeatureMutation
     // Add your own mutations here
   })
 });
@@ -141,7 +174,6 @@ const mutationType = new GraphQLObjectType({
  * type we defined above) and export it.
  */
 export default new GraphQLSchema({
-  query: queryType
-  // Uncomment the following after adding some mutation fields:
-  // mutation: mutationType
+  query: queryType,
+  mutation: mutationType
 });

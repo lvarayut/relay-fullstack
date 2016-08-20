@@ -1,5 +1,19 @@
 schema {
   query: Query
+  mutation: Mutation
+}
+
+input AddFeatureInput {
+  name: String!
+  description: String!
+  url: String!
+  clientMutationId: String!
+}
+
+type AddFeaturePayload {
+  featureEdge: FeatureEdge
+  viewer: User
+  clientMutationId: String!
 }
 
 type Feature implements Node {
@@ -17,6 +31,10 @@ type FeatureConnection {
 type FeatureEdge {
   node: Feature
   cursor: String!
+}
+
+type Mutation {
+  addFeature(input: AddFeatureInput!): AddFeaturePayload
 }
 
 interface Node {
