@@ -15,7 +15,6 @@ test('includes all expected files', () => {
     'package.json',
     'Procfile',
     'webpack.config.js',
-    'webpack.production.config.js',
     'client',
     'server'
   ]);
