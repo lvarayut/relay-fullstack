@@ -8,8 +8,10 @@
   "rules": {
     "comma-dangle": 0,
     "max-len": 0,
+    "jsx-quotes": [2, "prefer-single"],
+    "generator-star-spacing": 0,
     "react/jsx-no-bind": 0,
     "react/prefer-stateless-function": 0,
-    "jsx-quotes": [2, "prefer-single"]
+    "react/jsx-filename-extension": 0
   }
 }
