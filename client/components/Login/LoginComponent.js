@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/href-no-hash */
 import React from 'react';
 import { Grid, Cell, Textfield, Button, Checkbox } from 'react-mdl';
 import Page from '../Page/PageComponent';
