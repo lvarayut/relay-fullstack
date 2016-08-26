@@ -1,9 +1,9 @@
 import React from 'react';
+import Relay from 'react-relay';
+import Dropdown from 'react-dropdown';
 import { Grid, Cell, Button } from 'react-mdl';
 import Page from '../Page/PageComponent';
-import Dropdown from 'react-dropdown';
 import AddFeatureMutation from './AddFeatureMutation';
-import Relay from 'react-relay';
 
 const options = [
   { value: 'none', label: 'Please select a feature' },
