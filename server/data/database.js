@@ -37,7 +37,7 @@ function addFeature(name, description, url) {
   const newFeature = new Feature(curFeatures, name, description, url);
   features.push(newFeature);
   newFeature.id = curFeatures;
-  curFeatures++;
+  curFeatures += 1;
   return newFeature;
 }
 
