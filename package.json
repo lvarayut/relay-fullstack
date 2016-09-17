@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/lvarayut/relay-fullstack.git"
   },
+  "engines": {
+    "node": "6.6.0" 
+  },
   "keywords": [
     "react",
     "relay",
