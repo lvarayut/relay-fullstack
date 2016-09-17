@@ -1,1 +1,1 @@
-web: npm run deploy
+web: node ./lib/index.js
