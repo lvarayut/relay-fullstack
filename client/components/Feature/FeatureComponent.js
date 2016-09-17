@@ -15,7 +15,7 @@ export default class Feature extends React.Component {
       <div>
         <Page heading='Integrated with'>
           <Grid>
-            {this.props.viewer.features.edges.map(edge => {
+            {this.props.viewer.features.edges.map((edge) => {
               const imageUrl = require(`../../assets/${edge.node.name.toLowerCase()}.png`);
               return (
                 <Cell col={4} key={edge.node.id}>
