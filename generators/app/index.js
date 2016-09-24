@@ -14,7 +14,7 @@ module.exports = yeoman.Base.extend({
       message: 'What would you like to name your app?',
       default: 'relay-fullstack',
       filter: n => s.slugify(n)
-    }]).then(answers => {
+    }]).then((answers) => {
       this.answers = {
         moduleName: answers.moduleName,
         appName: s(answers.moduleName).humanize().titleize().value()
