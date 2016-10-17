@@ -1,6 +1,6 @@
 {
   "name": "generator-relay-fullstack",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Relay Starter Kit integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS",
   "homepage": "lvarayut.github.io/relay-fullstack",
   "author": {
