@@ -14,7 +14,7 @@ import {
 import {
   connectionArgs,
   connectionDefinitions,
-  connectionFromArray,
+  connectionFromPromisedArray,
   fromGlobalId,
   globalIdField,
   mutationWithClientMutationId,
@@ -24,9 +24,9 @@ import {
 
 import {
   User,
-  Feature,
-  getUser,
-  getFeature,
+  Person,
+  userLoader,
+  featureLoader,
   getFeatures,
   addFeature
 } from './database';
@@ -42,9 +42,9 @@ const { nodeInterface, nodeField } = nodeDefinitions(
   (globalId) => {
     const { type, id } = fromGlobalId(globalId);
     if (type === 'User') {
-      return getUser(id);
+      return userLoader.load(id);
     } else if (type === 'Feature') {
-      return getFeature(id);
+      return featureLoader.load(id);
     }
     return null;
   },
@@ -71,7 +71,9 @@ const userType = new GraphQLObjectType({
       type: featureConnection,
       description: 'Features that I have',
       args: connectionArgs,
-      resolve: (_, args) => connectionFromArray(getFeatures(), args)
+      resolve: (source, args) => {
+        return connectionFromPromisedArray(featureLoader.loadMany(source.features), args);
+      }
     },
     username: {
       type: GraphQLString,
@@ -101,7 +103,7 @@ const featureType = new GraphQLObjectType({
     url: {
       type: GraphQLString,
       description: 'Url of the feature'
-    }
+    },
   }),
   interfaces: [nodeInterface]
 });
@@ -133,7 +135,7 @@ const addFeatureMutation = mutationWithClientMutationId({
     },
     viewer: {
       type: userType,
-      resolve: () => getUser('1')
+      resolve: () => userLoader.load('1')
     }
   },
 
@@ -152,7 +154,7 @@ const queryType = new GraphQLObjectType({
     // Add your own root fields here
     viewer: {
       type: userType,
-      resolve: () => getUser('1')
+      resolve: () => userLoader.load('1')
     }
   })
 });
