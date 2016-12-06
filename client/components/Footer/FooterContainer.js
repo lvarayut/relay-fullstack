@@ -1,3 +1,4 @@
+// @flow
 import Relay from 'react-relay';
 import Footer from './FooterComponent';
 

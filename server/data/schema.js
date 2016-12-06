@@ -1,3 +1,4 @@
+// @flow
 /* eslint-disable no-unused-vars, no-use-before-define */
 import {
   GraphQLBoolean,

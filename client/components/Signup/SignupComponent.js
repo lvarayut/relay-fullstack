@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Grid, Cell, Textfield, Button } from 'react-mdl';
 import Page from '../Page/PageComponent';

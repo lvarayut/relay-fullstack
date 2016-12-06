@@ -1,10 +1,16 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
   "env": {
     "browser": true,
     "node": true
   },
+  "plugins": [
+    "flowtype"
+  ],
   "rules": {
     "comma-dangle": 0,
     "max-len": 0,

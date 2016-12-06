@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import Relay from 'react-relay';
 import ReactDOM from 'react-dom';
