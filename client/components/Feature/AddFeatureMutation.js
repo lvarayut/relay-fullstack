@@ -1,3 +1,4 @@
+// @flow
 import Relay from 'react-relay';
 
 class AddFeatureMutation extends Relay.Mutation {
