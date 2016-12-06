@@ -134,7 +134,7 @@ const addFeatureMutation = mutationWithClientMutationId({
     },
     viewer: {
       type: userType,
-      resolve: () => getUser('1')
+      resolve: () => getUser(1)
     }
   },
 
@@ -153,7 +153,7 @@ const queryType = new GraphQLObjectType({
     // Add your own root fields here
     viewer: {
       type: userType,
-      resolve: () => getUser('1')
+      resolve: () => getUser(1)
     }
   })
 });
