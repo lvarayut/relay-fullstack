@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import Relay from 'react-relay';
 import Dropdown from 'react-dropdown';
@@ -29,7 +30,7 @@ export default class Feature extends React.Component {
     }
   }
 
-  onSelect = (e) => {
+  onSelect = (e: {label: string, value: string}) => {
     this.setState({ form: { dropdown: e } });
   }
 

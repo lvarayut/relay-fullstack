@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Footer as MDLFooter, FooterSection } from 'react-mdl';
 import styles from './Footer.scss';
