@@ -1,13 +1,17 @@
+import DataLoader from 'dataloader';
+
 class User {
   id: number;
   name: string;
   username: string;
   website: string;
-  constructor(id: number, name: string, username: string, website: string) {
+  features: Array<Feature>;
+  constructor(id: number, name: string, username: string, website: string, features: Array<Feature>) {
     this.id = id;
     this.name = name;
     this.username = username;
     this.website = website;
+    this.features = features;
   }
 }
 
@@ -24,7 +28,6 @@ class Feature {
   }
 }
 
-const lvarayut = new User(1, 'Varayut Lerdkanlayanawat', 'lvarayut', 'https://github.com/lvarayut/relay-fullstack');
 const features = [
   new Feature(1, 'React', 'A JavaScript library for building user interfaces.', 'https://facebook.github.io/react'),
   new Feature(2, 'Relay', 'A JavaScript framework for building data-driven react applications.', 'https://facebook.github.io/relay'),
@@ -35,20 +38,11 @@ const features = [
   new Feature(7, 'PostCSS', 'PostCSS. A tool for transforming CSS with JavaScript.', 'http://postcss.org'),
   new Feature(8, 'MDL', 'Material Design Lite lets you add a Material Design to your websites.', 'http://www.getmdl.io')
 ];
+const lvarayut = new User(1, 'Varayut Lerdkanlayanawat', 'lvarayut', 'https://github.com/lvarayut/relay-fullstack', features.map(feature => feature.id));
 
 /*
 * Add feature in memory
 */
-
-let curFeatures: number = 9;
-function addFeature(name: string, description: string, url: string) {
-  const newFeature = new Feature(curFeatures, name, description, url);
-  features.push(newFeature);
-  newFeature.id = curFeatures;
-  curFeatures += 1;
-  return newFeature;
-}
-
 
 function getUser(id: number) {
   return id === lvarayut.id ? lvarayut : null;
@@ -62,11 +56,43 @@ function getFeatures() {
   return features;
 }
 
+function fetchUser(id) {
+  return new Promise((resolve) => {
+    resolve(getUser(id));
+  });
+}
+
+function fetchFeature(id) {
+  return new Promise((resolve) => {
+    resolve(getFeature(id));
+  });
+}
+
+const userLoader = new DataLoader(
+  ids => Promise.all(ids.map(fetchUser))
+);
+
+const featureLoader = new DataLoader(
+  ids => Promise.all(ids.map(fetchFeature))
+);
+
+let curFeatures = 9;
+function addFeature(name: string, description: string, url: string) {
+  const newFeature = new Feature(curFeatures, name, description, url);
+  features.push(newFeature);
+  newFeature.id = curFeatures;
+  lvarayut.features.push(newFeature.id);
+  featureLoader.clear(newFeature.id);
+  userLoader.clear(lvarayut.id);
+  curFeatures += 1;
+  return newFeature;
+}
+
 export {
+  userLoader,
+  featureLoader,
   User,
   Feature,
-  getUser,
-  getFeature,
   getFeatures,
   addFeature
 };
