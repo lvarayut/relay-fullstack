@@ -23,9 +23,8 @@ if (process.env.NODE_ENV === 'production') {
   appEntry = [path.join(__dirname, 'client/index.js')];
   devtool = 'source-map';
   plugins = [
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.js'}),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
@@ -48,8 +47,8 @@ if (process.env.NODE_ENV === 'production') {
   ];
   devtool = 'eval';
   plugins = [
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
-    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.js'}),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       __DEV__: true
@@ -71,25 +70,53 @@ module.exports = {
   },
   devtool,
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/,
-      loader: 'babel-loader',
+      use: 'babel-loader',
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      loaders: ['style', 'css']
+      use: [
+        'style-loader',
+        'css-loader'
+      ],
     }, {
       test: /\.scss$/,
-      loaders: [
-        'style',
-        'css?modules&importLoaders=1' +
-          '&localIdentName=[name]__[local]___[hash:base64:5]!postcss'
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            importLoaders: 1,
+            localIdentName: "[name]__[local]___[hash:base64:5]",
+          }
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            //https://github.com/postcss/postcss-loader/issues/164
+            // use ident if passing a function
+            ident: 'postcss', plugins: () => [
+              require('precss'),
+              require('autoprefixer')
+            ]
+          }
+
+        }
       ]
     }, {
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
-      loader: 'url-loader?limit=10000&name=assets/[hash].[ext]'
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 1000,
+            name: "assets/[hash].[ext]"
+          }
+        }
+      ]
     }]
   },
-  postcss: () => [precss, autoprefixer],
   plugins
 };
