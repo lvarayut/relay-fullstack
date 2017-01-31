@@ -82,6 +82,7 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-dropdown": "^1.2.0",
+    "react-hot-loader": "3.0.0-beta.6",
     "react-mdl": "^1.9.0",
     "react-relay": "^0.10.0",
     "react-router": "^3.0.0",
@@ -89,6 +90,6 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "2.2.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "2.2.1"
   }
 }
