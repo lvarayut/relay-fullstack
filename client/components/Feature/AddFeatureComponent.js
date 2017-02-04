@@ -3,8 +3,8 @@ import React from 'react';
 import Relay from 'react-relay';
 import Dropdown from 'react-dropdown';
 import { Grid, Cell, Button } from 'react-mdl';
+import RelayGraphQLMutation from '../../../node_modules/react-relay/lib/RelayGraphQLMutation';
 import Page from '../Page/PageComponent';
-import AddFeatureMutation from './AddFeatureMutation';
 
 const options = [
   { value: 'none', label: 'Please select a feature' },
@@ -39,9 +39,64 @@ export default class Feature extends React.Component {
     if (value === 'none') {
       return;
     }
-
-    const addFeatureMutation = new AddFeatureMutation({ viewerId: this.props.viewer.id, ...inputData[value] });
-    Relay.Store.commitUpdate(addFeatureMutation);
+    const query =
+      Relay.QL`mutation {
+        addFeature {
+          featureEdge {
+            __typename
+            node {
+              name
+              id
+              description
+              url
+            }
+          }
+        }
+      }`;
+    const variables = {
+      input: {
+        ...inputData[value]
+      }
+    };
+    const mutation = new RelayGraphQLMutation(
+      query,
+      variables,
+      null, // no files
+      Relay.Store,
+      null, // callback not necessary
+      value // value is collision key
+    );
+    const optimisticQuery =
+      Relay.QL`mutation {
+        addFeature {
+          featureEdge {
+            node {
+              name
+              description
+              url
+            }
+          }
+        }
+      }`;
+    const optimisticResponse = {
+      featureEdge: {
+        node: {
+          ...inputData[value]
+        }
+      }
+    };
+    const config = [{
+      type: 'RANGE_ADD',
+      parentName: 'viewer',
+      parentID: this.props.viewer.id,
+      connectionName: 'features',
+      edgeName: 'featureEdge',
+      rangeBehaviors: {
+        '': 'append',
+      },
+    }];
+    mutation.applyOptimistic(optimisticQuery, optimisticResponse, config);
+    mutation.commit(config);
   }
 
   render() {
