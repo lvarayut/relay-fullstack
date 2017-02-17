@@ -18,8 +18,8 @@ dependencies:
   override:
       - yarn
       - webpack --config webpack.config.js
-      - npm run update
-      - npm run build-server
+      - yarn run update
+      - yarn run build-server
   cache_directories:
       - ~/.yarn
       - ~/.cache/yarn
