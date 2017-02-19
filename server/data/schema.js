@@ -31,7 +31,7 @@ import {
   addFeature
 } from './database';
 
-
+import getJWT from '../utils/jwtToken';
 /**
  * We get the node interface and field from the Relay library.
  *
@@ -85,6 +85,7 @@ const userType = new GraphQLObjectType({
   interfaces: [nodeInterface]
 });
 
+
 const featureType = new GraphQLObjectType({
   name: 'Feature',
   description: 'Feature integrated in our starter kit',
@@ -109,7 +110,10 @@ const featureType = new GraphQLObjectType({
 /**
  * Define your own connection types here
  */
-const { connectionType: featureConnection, edgeType: featureEdge } = connectionDefinitions({ name: 'Feature', nodeType: featureType });
+const { connectionType: featureConnection, edgeType: featureEdge } = connectionDefinitions({
+  name: 'Feature',
+  nodeType: featureType
+});
 
 /**
  * Create feature example
@@ -140,6 +144,23 @@ const addFeatureMutation = mutationWithClientMutationId({
   mutateAndGetPayload: ({ name, description, url }) => addFeature(name, description, url)
 });
 
+const createToken = mutationWithClientMutationId({
+  name: 'loginMutation',
+  inputFields: {
+    username: { type: new GraphQLNonNull(GraphQLString) },
+    password: { type: new GraphQLNonNull(GraphQLString) }
+  },
+  outputFields: {
+    jwtToken: {
+      type: new GraphQLNonNull(GraphQLString)
+    },
+    error: {
+      type: GraphQLString
+    }
+  },
+
+  mutateAndGetPayload: ({ username, password, }) => getJWT(username, password)
+});
 
 /**
  * This is the type that will be the root of our query,
@@ -164,7 +185,8 @@ const queryType = new GraphQLObjectType({
 const mutationType = new GraphQLObjectType({
   name: 'Mutation',
   fields: () => ({
-    addFeature: addFeatureMutation
+    addFeature: addFeatureMutation,
+    createToken
     // Add your own mutations here
   })
 });
