@@ -75,6 +75,7 @@
     "graphql": "^0.8.2",
     "graphql-relay": "^0.4.4",
     "html-webpack-plugin": "^2.26.0",
+    "jsonwebtoken": "^7.3.0",
     "lodash": "^4.17.4",
     "normalize.css": "^5.0.0",
     "postcss-loader": "^1.2.1",

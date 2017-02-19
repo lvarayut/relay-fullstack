@@ -44,8 +44,21 @@ type FeatureEdge {
   cursor: String!
 }
 
+input loginMutationInput {
+  username: String!
+  password: String!
+  clientMutationId: String
+}
+
+type loginMutationPayload {
+  jwtToken: String!
+  error: String
+  clientMutationId: String
+}
+
 type Mutation {
   addFeature(input: AddFeatureInput!): AddFeaturePayload
+  createToken(input: loginMutationInput!): loginMutationPayload
 }
 
 # An object with an ID
