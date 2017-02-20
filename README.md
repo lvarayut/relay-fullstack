@@ -164,13 +164,17 @@ $ npm run update
 
 ## Contributors
 
-[<img alt="lvarayut" src="https://avatars.githubusercontent.com/u/4281887?v=3&s=117" width="117">](https://github.com/lvarayut) |[<img alt="ianaya89" src="https://avatars.githubusercontent.com/u/3258966?v=3&s=117" width="117">](https://github.com/ianaya89) |[<img alt="kkostov" src="https://avatars.githubusercontent.com/u/4718042?v=3&s=117" width="117">](https://github.com/kkostov) |[<img alt="jtfell" src="https://avatars.githubusercontent.com/u/6702746?v=3&s=117" width="117">](https://github.com/jtfell) |[<img alt="kennydee" src="https://avatars.githubusercontent.com/u/1484406?v=3&s=117" width="117">](https://github.com/kennydee) |[<img alt="arnif" src="https://avatars.githubusercontent.com/u/1312916?v=3&s=117" width="117">](https://github.com/arnif) |
+[<img alt="lvarayut" src="https://avatars.githubusercontent.com/u/4281887?v=3&s=117" width="117">](https://github.com/lvarayut) |[<img alt="maksugr" src="https://avatars.githubusercontent.com/u/8699120?v=3&s=117" width="117">](https://github.com/maksugr) |[<img alt="ianaya89" src="https://avatars.githubusercontent.com/u/3258966?v=3&s=117" width="117">](https://github.com/ianaya89) |[<img alt="crucialfelix" src="https://avatars.githubusercontent.com/u/218738?v=3&s=117" width="117">](https://github.com/crucialfelix) |[<img alt="jg123" src="https://avatars.githubusercontent.com/u/693277?v=3&s=117" width="117">](https://github.com/jg123) |[<img alt="jtfell" src="https://avatars.githubusercontent.com/u/6702746?v=3&s=117" width="117">](https://github.com/jtfell) |
 :---: |:---: |:---: |:---: |:---: |:---: |
-[lvarayut](https://github.com/lvarayut) |[ianaya89](https://github.com/ianaya89) |[kkostov](https://github.com/kkostov) |[jtfell](https://github.com/jtfell) |[kennydee](https://github.com/kennydee) |[arnif](https://github.com/arnif) |
+[lvarayut](https://github.com/lvarayut) |[maksugr](https://github.com/maksugr) |[ianaya89](https://github.com/ianaya89) |[crucialfelix](https://github.com/crucialfelix) |[jg123](https://github.com/jg123) |[jtfell](https://github.com/jtfell) |
 
-[<img alt="lexun" src="https://avatars.githubusercontent.com/u/1910143?v=3&s=117" width="117">](https://github.com/lexun) |[<img alt="narongdejsrn" src="https://avatars.githubusercontent.com/u/1563323?v=3&s=117" width="117">](https://github.com/narongdejsrn) |[<img alt="ncrmro" src="https://avatars.githubusercontent.com/u/8276365?v=3&s=117" width="117">](https://github.com/ncrmro) |[<img alt="sankalpk" src="https://avatars.githubusercontent.com/u/1317291?v=3&s=117" width="117">](https://github.com/sankalpk) |[<img alt="jg123" src="https://avatars.githubusercontent.com/u/693277?v=3&s=117" width="117">](https://github.com/jg123) |
-:---: |:---: |:---: |:---: |:---: |
-[lexun](https://github.com/lexun) |[narongdejsrn](https://github.com/narongdejsrn) |[ncrmro](https://github.com/ncrmro) |[sankalpk](https://github.com/sankalpk) |[jg123](https://github.com/jg123) |
+[<img alt="arnif" src="https://avatars.githubusercontent.com/u/1312916?v=3&s=117" width="117">](https://github.com/arnif) |[<img alt="kkostov" src="https://avatars.githubusercontent.com/u/4718042?v=3&s=117" width="117">](https://github.com/kkostov) |[<img alt="lexun" src="https://avatars.githubusercontent.com/u/1910143?v=3&s=117" width="117">](https://github.com/lexun) |[<img alt="narongdejsrn" src="https://avatars.githubusercontent.com/u/1563323?v=3&s=117" width="117">](https://github.com/narongdejsrn) |[<img alt="ncrmro" src="https://avatars.githubusercontent.com/u/8276365?v=3&s=117" width="117">](https://github.com/ncrmro) |[<img alt="sankalpk" src="https://avatars.githubusercontent.com/u/1317291?v=3&s=117" width="117">](https://github.com/sankalpk) |
+:---: |:---: |:---: |:---: |:---: |:---: |
+[arnif](https://github.com/arnif) |[kkostov](https://github.com/kkostov) |[lexun](https://github.com/lexun) |[narongdejsrn](https://github.com/narongdejsrn) |[ncrmro](https://github.com/ncrmro) |[sankalpk](https://github.com/sankalpk) |
+
+[<img alt="kennydee" src="https://avatars.githubusercontent.com/u/1484406?v=3&s=117" width="117">](https://github.com/kennydee) |
+:---: |
+[kennydee](https://github.com/kennydee) |
 
 ## License
 
