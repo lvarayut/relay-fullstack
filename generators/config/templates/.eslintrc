@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "comma-dangle": 0,
+    "max-len": 0,
+    "jsx-quotes": [2, "prefer-single"],
+    "generator-star-spacing": 0,
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "import/no-dynamic-require": 0,
+    "class-methods-use-this": 0,
+    "react/jsx-no-bind": 0,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-filename-extension": 0,
+    "react/forbid-prop-types": 0
+  }
+}
