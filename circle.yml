@@ -1,0 +1,35 @@
+machine:
+  environment:
+    YARN_VERSION: 0.20.3
+    PATH: "${PATH}:${HOME}/.yarn/bin:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+    NODE_ENV: production
+  node:
+    version: 6.6.0
+
+dependencies:
+  pre:
+      - |
+        if [[ ! -e ~/.yarn/bin/yarn || $(yarn --version) != "${YARN_VERSION}" ]]; then
+          echo "Download and install Yarn."
+          curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION
+        else
+          echo "The correct version of Yarn is already installed."
+        fi
+  override:
+      - yarn
+      - webpack --config webpack.config.js
+      - yarn run update
+      - yarn run build-server
+  cache_directories:
+      - ~/.yarn
+      - ~/.cache/yarn
+
+test:
+  pre:
+  # https://circleci.com/docs/background-process/
+  # This should start the node server as a background process
+    - node ./build/index.js:
+        background: true
+  override:
+  # Simple test
+    - curl localhost:3000
