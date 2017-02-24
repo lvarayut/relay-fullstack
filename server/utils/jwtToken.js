@@ -11,7 +11,7 @@ const signJWT = ({ id }) => {
 const getJWT = (/* { username, password }*/) => {
   /* const user = getUser(1);*/
   const jwtToken = signJWT(1);
-  return { jwtToken };
+  return jwtToken;
 };
 
 export default getJWT;

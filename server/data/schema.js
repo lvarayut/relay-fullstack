@@ -8,7 +8,8 @@ import {
   GraphQLNonNull,
   GraphQLObjectType,
   GraphQLSchema,
-  GraphQLString
+  GraphQLString,
+  GraphQLUnionType,
 } from 'graphql';
 
 import {
@@ -144,6 +145,49 @@ const addFeatureMutation = mutationWithClientMutationId({
   mutateAndGetPayload: ({ name, description, url }) => addFeature(name, description, url)
 });
 
+const createTokenSuccess = new GraphQLObjectType({
+  // https://auth0.com/blog/refresh-tokens-what-are-they-and-when-to-use-them/
+  name: 'createTokenSuccess',
+  description: 'Object with an access token and a refresh token',
+  fields: () => ({
+    accessToken: {
+      description: 'Access tokens usually have an expiration date and are short-lived',
+      type: new GraphQLNonNull(GraphQLString)
+    }
+    /*
+     refreshToken: {
+     description: 'Refresh tokens carry the information necessary to get a new access token',
+     type: new GraphQLNonNull(GraphQLString)
+     }
+     */
+  })
+});
+
+const createTokenError = new GraphQLObjectType({
+  name: 'createTokenError',
+  description: 'Object with an error',
+  fields: () => ({
+    error: {
+      type: new GraphQLNonNull(GraphQLString)
+    }
+  })
+});
+
+const resolveTokenTypes = (data) => {
+  if (data.accessToken) {
+    return createTokenSuccess;
+  }
+
+  return createTokenError;
+};
+
+const createTokenUnion = new GraphQLUnionType({
+  name: 'createTokenUnion',
+  types: [createTokenSuccess, createTokenError],
+  resolveType: resolveTokenTypes
+});
+
+
 const createToken = mutationWithClientMutationId({
   name: 'loginMutation',
   inputFields: {
@@ -151,15 +195,19 @@ const createToken = mutationWithClientMutationId({
     password: { type: new GraphQLNonNull(GraphQLString) }
   },
   outputFields: {
-    jwtToken: {
-      type: new GraphQLNonNull(GraphQLString)
+    tokens: {
+      type: createTokenUnion,
+      resolve: obj => obj
     },
-    error: {
-      type: GraphQLString
+    viewer: {
+      type: userType,
+      resolve: () => getUser(1)
     }
   },
-
-  mutateAndGetPayload: ({ username, password, }) => getJWT(username, password)
+  mutateAndGetPayload: ({ username, password, }) => {
+    const jwtToken = getJWT(username, password);
+    return { accessToken: jwtToken };
+  }
 });
 
 /**
