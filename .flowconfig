@@ -1,0 +1,10 @@
+[libs]
+
+[options]
+module.name_mapper.extension='css' -> '<PROJECT_ROOT>/client/global.js'
+module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/client/global.js'
+module.ignore_non_literal_requires=true
+
+[ignore]
+.*/build/.*
+.*/server/utils/.*

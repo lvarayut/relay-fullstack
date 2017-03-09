@@ -1,5 +1,5 @@
+// @flow
 import React from 'react';
-import Relay from 'react-relay';
 import Dropdown from 'react-dropdown';
 import { Grid, Cell, Button } from 'react-mdl';
 import Page from '../Page/PageComponent';
@@ -29,7 +29,7 @@ export default class Feature extends React.Component {
     }
   }
 
-  onSelect = (e) => {
+  onSelect = (e: {label: string, value: string}) => {
     this.setState({ form: { dropdown: e } });
   }
 
@@ -38,9 +38,11 @@ export default class Feature extends React.Component {
     if (value === 'none') {
       return;
     }
-
-    const addFeatureMutation = new AddFeatureMutation({ viewerId: this.props.viewer.id, ...inputData[value] });
-    Relay.Store.commitUpdate(addFeatureMutation);
+    const mutation = new AddFeatureMutation(
+      this.props.viewer.id,
+      inputData[value],
+    );
+    mutation.optimistic().commit();
   }
 
   render() {

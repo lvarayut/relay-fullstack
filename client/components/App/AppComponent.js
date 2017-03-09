@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import 'normalize.css/normalize.css';
 import 'react-mdl/extra/css/material.cyan-red.min.css';
