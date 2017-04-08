@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Relay from 'react-relay';
 import Dropdown from 'react-dropdown';
 import { Grid, Cell, Button } from 'react-mdl';
@@ -20,7 +21,7 @@ const inputData = {
 
 export default class Feature extends React.Component {
   static propTypes = {
-    viewer: React.PropTypes.object.isRequired
+    viewer: PropTypes.object.isRequired
   };
 
   state = {
