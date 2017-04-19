@@ -20,6 +20,7 @@ node_modules/
 # App Files
 # --------------------
 build/
+**/__generated__/
 
 # --------------------
 # IntelliJ Files
