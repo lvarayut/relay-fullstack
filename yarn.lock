@@ -4995,7 +4995,7 @@ react-relay@dev:
 
 "react-router-relay@https://github.com/Neitsch/react-router-relay#fullstack":
   version "0.0.0"
-  resolved "https://github.com/Neitsch/react-router-relay#e6562a309aabfe7ce40e13459b7b2b00a8c704c3"
+  resolved "https://github.com/Neitsch/react-router-relay#8ddd543466b9a7507c0c9a8d3cd0881c018f0a63"
   dependencies:
     babel-runtime "^6.23.0"
     invariant "^2.2.2"

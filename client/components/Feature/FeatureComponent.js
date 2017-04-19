@@ -9,7 +9,8 @@ import AddFeature from './AddFeatureComponent';
 
 export default class Feature extends React.Component {
   static propTypes = {
-    viewer: PropTypes.object.isRequired
+    viewer: PropTypes.object.isRequired,
+    relay: PropTypes.any,
   };
 
   render() {
@@ -35,7 +36,7 @@ export default class Feature extends React.Component {
             })}
           </Grid>
         </Page>
-        <AddFeature viewer={this.props.viewer} />
+        <AddFeature relay={this.props.relay} viewer={this.props.viewer} />
       </div>
     );
   }
