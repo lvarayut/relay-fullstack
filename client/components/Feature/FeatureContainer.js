@@ -1,5 +1,5 @@
 // @flow
-import Relay from 'react-relay';
+import Relay from 'react-relay/classic';
 import Feature from './FeatureComponent';
 
 export default Relay.createContainer(Feature, {

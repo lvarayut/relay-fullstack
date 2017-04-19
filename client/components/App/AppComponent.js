@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import PropTypes from 'prop-types';
 import 'normalize.css/normalize.css';
 import 'react-mdl/extra/css/material.cyan-red.min.css';
 import Navbar from '../Navbar/NavbarComponent';
@@ -9,8 +10,8 @@ import yeoman from '../../assets/yeoman.png';
 
 export default class App extends React.Component {
   static propTypes = {
-    children: React.PropTypes.object.isRequired,
-    viewer: React.PropTypes.object.isRequired
+    children: PropTypes.object.isRequired,
+    viewer: PropTypes.object.isRequired
   };
 
   render() {

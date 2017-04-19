@@ -1,5 +1,5 @@
 // @flow
-import Relay from 'react-relay';
+import Relay from 'react-relay/classic';
 import App from './AppComponent';
 import Footer from '../Footer/FooterContainer';
 
