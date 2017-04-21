@@ -13,7 +13,8 @@
             "transform": "react-transform-catch-errors",
             "imports": ["react", "redbox-react"]
           }]
-        }]
+        }],
+        ["relay", {"compat": true, "schema": "server/data/schema.graphql"}]
       ]
     }
   }
