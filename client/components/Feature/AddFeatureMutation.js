@@ -1,6 +1,5 @@
 // @flow
 import { graphql, commitMutation, Environment } from 'react-relay/compat';
-import type { AddFeatureInput } from './__generated__/AddFeatureMutation.flow';
 
 const mutation = graphql`
   mutation AddFeatureMutation($input: AddFeatureInput!) {
@@ -35,11 +34,13 @@ function getConfigs(viewerId) {
 
 function getOptimisticResponse(data, viewerId) {
   return {
-    featureEdge: {
-      node: data,
-    },
-    viewer: {
-      id: viewerId
+    addFeature: {
+      featureEdge: {
+        node: data,
+      },
+      viewer: {
+        id: viewerId
+      }
     }
   };
 }
