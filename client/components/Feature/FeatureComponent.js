@@ -10,7 +10,7 @@ import AddFeature from './AddFeatureComponent';
 export default class Feature extends React.Component {
   static propTypes = {
     viewer: PropTypes.object.isRequired,
-    relay: PropTypes.any,
+    relay: PropTypes.object.isRequired,
   };
 
   render() {

@@ -1,10 +1,7 @@
 // @flow
-'use strict';
 
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
-const precss = require('precss');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
@@ -18,7 +15,7 @@ if (process.env.NODE_ENV === 'production') {
   plugins = [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.js'}),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
@@ -47,7 +44,7 @@ if (process.env.NODE_ENV === 'production') {
   ];
   devtool = 'eval';
   plugins = [
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.js'}),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
@@ -95,15 +92,17 @@ module.exports = {
           options: {
             modules: true,
             importLoaders: 1,
-            localIdentName: "[name]__[local]___[hash:base64:5]",
+            localIdentName: '[name]__[local]___[hash:base64:5]',
           }
         },
         {
           loader: 'postcss-loader',
           options: {
-            //https://github.com/postcss/postcss-loader/issues/164
+            // https://github.com/postcss/postcss-loader/issues/164
             // use ident if passing a function
-            ident: 'postcss', plugins: () => [
+            ident: 'postcss',
+            plugins: () => [
+              /* eslint-disable global-require */
               require('precss'),
               require('autoprefixer')
             ]
@@ -118,7 +117,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 1000,
-            name: "assets/[hash].[ext]"
+            name: 'assets/[hash].[ext]'
           }
         }
       ]
