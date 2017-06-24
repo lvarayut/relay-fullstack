@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new HtmlWebpackPlugin({
-      title: '<%= appName %>, Powered by Relay Fullstack',
+      title: 'Relay Starter Kit - Integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS',
       template: './client/index.html',
       mobile: true,
       inject: false
@@ -52,7 +52,7 @@ if (process.env.NODE_ENV === 'production') {
       __DEV__: true
     }),
     new HtmlWebpackPlugin({
-      title: '<%= appName %>, Powered by Relay Fullstack',
+      title: 'Relay Starter Kit - Integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS',
       template: './client/index.html',
       mobile: true,
       inject: false
