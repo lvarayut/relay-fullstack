@@ -19,10 +19,10 @@ const inputData = {
   css: { name: 'css', url: 'https://www.w3.org/Style/CSS/Overview.en.html', description: 'Cascading Style Sheets (CSS) is a simple mechanism for adding style to Web documents.' }
 };
 
-export default class Feature extends React.Component {
+export default class AddFeature extends React.Component {
   static propTypes = {
     viewer: PropTypes.object.isRequired,
-    relay: PropTypes.any,
+    relay: PropTypes.object.isRequired,
   };
 
   state = {

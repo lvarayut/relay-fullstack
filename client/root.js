@@ -6,7 +6,9 @@ import Routes from './routes/Route';
 
 const Root = () => (
   <Router
-    history={browserHistory} routes={Routes} render={applyRouterMiddleware(useRelay)}
+    history={browserHistory}
+    routes={Routes}
+    render={applyRouterMiddleware(useRelay)}
     environment={Relay.Store}
   />
 );
