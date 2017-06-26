@@ -21,6 +21,7 @@ node_modules/
 # --------------------
 build/
 **/__generated__/
+flow-typed/npm/
 
 # --------------------
 # IntelliJ Files

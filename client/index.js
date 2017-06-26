@@ -7,7 +7,10 @@ import '../node_modules/react-mdl/extra/material';
 import Root from './root';
 
 const rootNode = document.createElement('div');
-document.body.appendChild(rootNode);
+
+if (document.body) {
+  document.body.appendChild(rootNode);
+}
 
 const render = (Component) => {
   ReactDOM.render(

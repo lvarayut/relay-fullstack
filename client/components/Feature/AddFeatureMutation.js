@@ -47,7 +47,7 @@ function getOptimisticResponse(data, viewerId) {
 
 function commit(
   environment: Environment,
-  data: AddFeatureInput,
+  data: Object,
   viewerId: number
 ) {
   commitMutation(
