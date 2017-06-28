@@ -6,7 +6,7 @@ import styles from './Navbar.scss';
 
 export default class Navbar extends React.Component {
   render() {
-    const title = '<%= appName %>';
+    const title = 'Relay Fullstack';
     return (
       <Layout className={styles.root}>
         <Header title={<Link to='/'>{title}</Link>} scroll>

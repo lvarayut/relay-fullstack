@@ -8,7 +8,7 @@
     "deploy": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.js && npm run update && npm run build-server && cross-env NODE_ENV=production node ./build/index.js",
     "build-server": "cross-env NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./build",
     "lint": "eslint client server",
-    "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "flow": "flow",
     "heroku-postbuild": "cross-env NODE_ENV=production webpack --config webpack.config.js && cross-env NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./lib",
     "clean": "rm -rf build && mkdir build",
     "relay": "relay-compiler --src ./client --schema server/data/schema.graphql"
@@ -51,7 +51,7 @@
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.1.0",
-    "flow-bin": "^0.48.0",
+    "flow-bin": "0.45.0",
     "nodemon": "^1.11.0",
     "pre-commit": "^1.2.2",
     "react-transform-catch-errors": "^1.0.2",

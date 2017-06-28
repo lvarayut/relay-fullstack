@@ -1,5 +1,8 @@
 {
-  "plugins": ["./server/utils/babelRelayPlugin", "transform-flow-strip-types"],
+  "plugins": [
+    ["relay", { "schema": "./server/data/schema.json", "compat": true }],
+    "transform-flow-strip-types"
+  ],
   "presets": ["react", "es2015", "stage-0"],
   "env": {
     "development": {
