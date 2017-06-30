@@ -5,14 +5,12 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
-let outputPath;
 let appEntry;
 let devtool;
 let plugins;
 
 if (process.env.NODE_ENV === 'production') {
   appEntry = [path.join(__dirname, 'client/index.js')];
-  outputPath = path.join(__dirname, 'build/app');
   devtool = 'source-map';
   plugins = [
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -43,7 +41,6 @@ if (process.env.NODE_ENV === 'production') {
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server'
   ];
-  outputPath = path.join(__dirname, 'app');
   devtool = 'eval';
   plugins = [
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
@@ -69,7 +66,7 @@ module.exports = {
     vendor: ['react', 'react-dom', 'react-mdl', 'react-relay', 'react-router', 'react-router-relay']
   },
   output: {
-    path: outputPath,
+    path: path.join(__dirname, 'build/app'),
     publicPath: '/',
     filename: '[name].js'
   },
