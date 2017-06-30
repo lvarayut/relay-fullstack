@@ -9,7 +9,7 @@
     "build-server": "cross-env NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./build",
     "lint": "eslint client server",
     "flow": "flow",
-    "heroku-postbuild": "cross-env NODE_ENV=production webpack --config webpack.config.js && cross-env NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./build",
+    "heroku-postbuild": "cross-env NODE_ENV=production webpack --config webpack.config.js && cross-env NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./lib",
     "clean": "rm -rf build && mkdir build",
     "relay": "relay-compiler --src ./client --schema server/data/schema.graphql"
   },
