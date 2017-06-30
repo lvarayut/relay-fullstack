@@ -97,7 +97,7 @@
     "react-router-relay": "^0.14.0",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
-    "webpack": "2",
+    "webpack": "^3.0.0",
     "webpack-dev-server": "2.5.0"
   }
 }
