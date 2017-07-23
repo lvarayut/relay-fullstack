@@ -20,7 +20,7 @@
 
 The basic installation contains only general technologies needed by most of the projects, Relay Fullstack is totally unopinionated. If you wanted to include a database, flow, or any specific technologies, please see the [Advance](#advance) section.
 
-Clone the repository to your local directory
+First, you need `watchman` installed, please follow its [installation guide](https://facebook.github.io/watchman/docs/install.html). Then, clone the repository to your local directory
 ```bash
 $ git clone https://github.com/lvarayut/relay-fullstack.git
 $ cd relay-fullstack
