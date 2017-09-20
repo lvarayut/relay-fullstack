@@ -2,19 +2,20 @@
   "parser": "babel-eslint",
   "extends": [
     "airbnb",
-    "plugin:flowtype/recommended"
+    "plugin:flowtype/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/flowtype"
   ],
   "env": {
     "browser": true,
     "node": true
   },
-  "plugins": [
-    "flowtype"
-  ],
+  "plugins": ["flowtype", "prettier", "react"],
   "rules": {
     "comma-dangle": 0,
     "max-len": 0,
-    "jsx-quotes": [2, "prefer-single"],
     "generator-star-spacing": 0,
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "import/no-dynamic-require": 0,
@@ -22,6 +23,7 @@
     "react/jsx-no-bind": 0,
     "react/prefer-stateless-function": 0,
     "react/jsx-filename-extension": 0,
-    "react/forbid-prop-types": 0
+    "react/forbid-prop-types": 0,
+    "prettier/prettier": ["error", { "singleQuote": true, "postcss": true }]
   }
 }

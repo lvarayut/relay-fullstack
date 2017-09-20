@@ -21,11 +21,9 @@ export default class App extends React.Component {
         <div className={styles.greeting}>
           <h1 className={styles.sawasdee}>Sawasdee, Sawasdee!</h1>
           <p>Always a pleasure scaffolding your apps</p>
-          <img src={yeoman} alt='yeoman' />
+          <img src={yeoman} alt="yeoman" />
         </div>
-        <div className={styles.content}>
-          {this.props.children}
-        </div>
+        <div className={styles.content}>{this.props.children}</div>
         <Footer viewer={this.props.viewer} />
       </div>
     );

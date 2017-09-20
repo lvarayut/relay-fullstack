@@ -14,7 +14,7 @@ if (document.body) {
 
 const render = Component => {
   ReactDOM.render(
-    <AppContainer  >
+    <AppContainer>
       <Component />
     </AppContainer>,
     rootNode
