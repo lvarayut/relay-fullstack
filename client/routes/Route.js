@@ -12,6 +12,6 @@ export default (
     <IndexRoute component={FeatureContainer} queries={ViewerQuery} />
     <Route path="/signup" component={SignupComponent} />
     <Route path="/login" component={LoginComponent} />
-    <Redirect from="*" to='/'   />
+    <Redirect from="*" to='/'  />
   </Route>
 );
