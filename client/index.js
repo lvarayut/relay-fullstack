@@ -12,9 +12,9 @@ if (document.body) {
   document.body.appendChild(rootNode);
 }
 
-const render = (Component) => {
+const render = Component => {
   ReactDOM.render(
-    <AppContainer >
+    <AppContainer>
       <Component />
     </AppContainer>,
     rootNode
