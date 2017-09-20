@@ -10,7 +10,7 @@ import LoginComponent from '../components/Login/LoginComponent';
 export default (
   <Route path="/" component={AppContainer} queries={ViewerQuery}>
     <IndexRoute component={FeatureContainer} queries={ViewerQuery} />
-    <Route path="/signup" component={SignupComponent} />
+    <Route     path='/signup' component={SignupComponent} />
     <Route path='/login' component={LoginComponent} />
     <Redirect from="*" to='/'        />
   </Route>
