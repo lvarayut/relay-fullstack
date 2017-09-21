@@ -1,20 +1,30 @@
 {
   "name": "relay-fullstack",
   "version": "1.0.0",
-  "description": "Relay Starter Kit - Integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS",
+  "description":
+    "Relay Starter Kit - Integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS",
   "scripts": {
-    "start": "nodemon --watch server/data/**/*.js --exec \"npm run update && npm run start-sub-task\"",
+    "start":
+      "nodemon --watch server/data/**/*.js --exec \"npm run update && npm run start-sub-task\"",
     "start-sub-task": "./node_modules/.bin/babel-node server/index.js",
-    "update": "./node_modules/.bin/babel-node server/utils/updateSchema.js && npm run relay",
-    "deploy": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.js && npm run update && npm run build-server && cross-env NODE_ENV=production node ./build/index.js",
-    "build-server": "cross-env NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./build",
+    "update":
+      "./node_modules/.bin/babel-node server/utils/updateSchema.js && npm run relay",
+    "deploy":
+      "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.js && npm run update && npm run build-server && cross-env NODE_ENV=production node ./build/index.js",
+    "build-server":
+      "cross-env NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./build",
     "lint": "eslint client server",
     "flow": "flow",
-    "heroku-postbuild": "cross-env NODE_ENV=production webpack --config webpack.config.js && cross-env NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./lib",
+    "heroku-postbuild":
+      "cross-env NODE_ENV=production webpack --config webpack.config.js && cross-env NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./lib",
     "clean": "rm -rf build && mkdir build",
-    "relay": "relay-compiler --src ./client --schema server/data/schema.graphql"
+    "relay":
+      "relay-compiler --src ./client --schema server/data/schema.graphql",
+    "precommit": "lint-staged"
   },
-  "pre-commit": "lint",
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write --single-quote", "git add"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lvarayut/relay-fullstack.git"
@@ -48,13 +58,18 @@
     "babel-plugin-relay": "dev",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-prettier": "^2.5.0",
     "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.3.0",
     "flow-bin": "0.45.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.1",
     "nodemon": "^1.11.0",
     "pre-commit": "^1.2.2",
+    "prettier": "^1.7.0",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.4",
     "redbox-react": "^1.4.2",
