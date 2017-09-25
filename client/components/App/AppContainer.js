@@ -1,13 +1,14 @@
 /* eslint-disable no-unused-vars */
 // @flow
-import { createFragmentContainer, graphql } from 'react-relay/compat';
+import { createFragmentContainer, graphql } from 'react-relay';
 import App from './AppComponent';
 import Footer from '../Footer/FooterContainer';
 
-export default createFragmentContainer(App, {
-  viewer: graphql`
+export default createFragmentContainer(
+  App,
+  graphql`
     fragment AppContainer_viewer on User {
-      ...Footer_viewer
+      ...FooterContainer_viewer
     }
   `
-});
+);

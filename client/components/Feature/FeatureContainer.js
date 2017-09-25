@@ -1,16 +1,14 @@
 // @flow
-import {
-  createFragmentContainer,
-  graphql,
-} from 'react-relay/compat';
+import { createFragmentContainer, graphql } from 'react-relay';
 import Feature from './FeatureComponent';
 
-
-export default createFragmentContainer(Feature, {
-  viewer: graphql`
+export default createFragmentContainer(
+  Feature,
+  graphql`
     fragment FeatureContainer_viewer on User {
-      id,
-      features(first: 20) {
+      id
+      features(first: 20)
+        @connection(key: "FeatureContainer_features", filters: []) {
         edges {
           node {
             id
@@ -20,5 +18,6 @@ export default createFragmentContainer(Feature, {
           }
         }
       }
-    }`
-});
+    }
+  `
+);

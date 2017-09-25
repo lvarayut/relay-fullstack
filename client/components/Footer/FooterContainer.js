@@ -1,8 +1,5 @@
 // @flow
-import {
-  createFragmentContainer,
-  graphql,
-} from 'react-relay/compat';
+import { createFragmentContainer, graphql } from 'react-relay';
 import Footer from './FooterComponent';
 
 export default createFragmentContainer(Footer, {
@@ -10,5 +7,6 @@ export default createFragmentContainer(Footer, {
     fragment FooterContainer_viewer on User {
       username
       website
-    }`
+    }
+  `
 });

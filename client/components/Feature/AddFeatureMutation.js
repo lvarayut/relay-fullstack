@@ -1,5 +1,6 @@
 // @flow
-import { graphql, commitMutation, Environment } from 'react-relay/compat';
+import { graphql, commitMutation } from 'react-relay';
+import { ConnectionHandler } from 'relay-runtime';
 
 const mutation = graphql`
   mutation AddFeatureMutation($input: AddFeatureInput!) {
@@ -12,53 +13,28 @@ const mutation = graphql`
           url
         }
       }
-      viewer {
-        id
-      }
     }
   }
 `;
 
-function getConfigs(viewerId) {
-  return [{
-    type: 'RANGE_ADD',
-    parentName: 'viewer',
-    parentID: viewerId,
-    connectionName: 'features',
-    edgeName: 'featureEdge',
-    rangeBehaviors: {
-      '': 'append',
-    },
-  }];
-}
+function commit(environment, data, viewerId) {
+  commitMutation(environment, {
+    mutation,
+    variables: { input: data },
+    updater: proxyStore => {
+      const createPostField = proxyStore.getRootField('addFeature');
+      const newFeature = createPostField.getLinkedRecord('featureEdge');
 
-function getOptimisticResponse(data, viewerId) {
-  return {
-    addFeature: {
-      featureEdge: {
-        node: data,
-      },
-      viewer: {
-        id: viewerId
+      const viewerProxy = proxyStore.get(viewerId);
+      const connection = ConnectionHandler.getConnection(
+        viewerProxy,
+        'FeatureContainer_features'
+      );
+      if (connection) {
+        ConnectionHandler.insertEdgeAfter(connection, newFeature);
       }
     }
-  };
-}
-
-function commit(
-  environment: Environment,
-  data: Object,
-  viewerId: number
-) {
-  commitMutation(
-    environment,
-    {
-      mutation,
-      variables: { input: data },
-      optimisticResponse: () => getOptimisticResponse(data, viewerId),
-      configs: getConfigs(viewerId),
-    }
-  );
+  });
 }
 
 export default { commit };
