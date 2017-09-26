@@ -9,7 +9,7 @@ The basic installation contains only general technologies needed by most of the 
 
 First, you need `watchman` installed, please follow its [installation guide](https://facebook.github.io/watchman/docs/install.html). Then, clone the repository to your local directory
 ```bash
-$ git clone https://github.com/lvarayut/relay-fullstack.git
+$ git clone git@github.com:SigaLei/relay-fullstack.git
 $ cd relay-fullstack
 ```
 
