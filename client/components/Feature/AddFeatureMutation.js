@@ -21,11 +21,11 @@ function commit(environment, data, viewerId) {
   commitMutation(environment, {
     mutation,
     variables: { input: data },
-    updater: proxyStore => {
-      const createPostField = proxyStore.getRootField('addFeature');
+    updater: store => {
+      const createPostField = store.getRootField('addFeature');
       const newFeature = createPostField.getLinkedRecord('featureEdge');
 
-      const viewerProxy = proxyStore.get(viewerId);
+      const viewerProxy = store.get(viewerId);
       const connection = ConnectionHandler.getConnection(
         viewerProxy,
         'FeatureContainer_features'
