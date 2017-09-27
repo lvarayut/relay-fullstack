@@ -1,9 +1,9 @@
 // @flow
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Page.scss';
 
-export default class Feature extends React.Component {
+export default class Feature extends Component {
   static propTypes = {
     children: PropTypes.element.isRequired,
     heading: PropTypes.string.isRequired
@@ -12,9 +12,7 @@ export default class Feature extends React.Component {
   render() {
     return (
       <div>
-        <h1 className={styles.heading}>
-          {this.props.heading}
-        </h1>
+        <h1 className={styles.heading}>{this.props.heading}</h1>
         <hr />
         {this.props.children}
       </div>

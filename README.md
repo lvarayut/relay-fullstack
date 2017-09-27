@@ -1,5 +1,18 @@
-> This repository is a fork from [Relay Fullstack](https://github.com/lvarayut/relay-fullstack). We forket it to personalize the boilerplate with our needs. It comes with many modern technologies; Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS. Relay Fullstack is also using [Hot-reload](https://github.com/gaearon/react-transform-hmr) to real time update the screen whenever any code changes.
-And we added Husk, Prettier and Tests.
+<h1 align="center">
+  <br>
+	<img width="800" src="https://cloud.githubusercontent.com/assets/4281887/14516854/792107ac-0231-11e6-95dd-86bb2b5197e3.png">
+	<br>
+  <br>
+  <br>
+</h1>
+
+[![Dependency Status](https://img.shields.io/david/lvarayut/relay-fullstack.svg)](https://github.com/lvarayut/relay-fullstack)
+[![devDependency Status](https://img.shields.io/david/dev/lvarayut/relay-fullstack.svg)](https://github.com/lvarayut/relay-fullstack)
+> Relay Fullstack is a Relay scaffolding application that aims to help you get up and running a project without worrying about integrating tools. It comes with many modern technologies; Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS. Relay Fullstack is also using [Hot-reload](https://github.com/gaearon/react-transform-hmr) to real time update the screen whenever any code changes.
+
+## Example 
+![Demo](https://cloud.githubusercontent.com/assets/4281887/13377800/9c4705a2-de1d-11e5-82cb-745e16d5b1c4.gif)
+> Check out the [Live demo](http://relay-fullstack.herokuapp.com) on Heroku.
 
 ## Usage
 
@@ -53,6 +66,25 @@ $ npm run deploy
 ```
 
 Again, launch your favorite web browser and go to `http://localhost:3000`.
+
+#### Heroku
+Before getting started, make sure you already installed the [Heroku Toolbelt](https://toolbelt.heroku.com), which is a command-line tooling for managing Heroku applications that makes it easy to deploy an application in a few steps:
+
+```bash
+$ heroku create                     # Create a new Heroku application
+$ git push heroku master            # Push your code into the created Heroku repository
+$ heroku ps:scale web=1             # Run the deployed application
+````
+
+That is it! Now, open the application on your default browser using `heroku open`.
+
+## Schema
+
+Whenever you start a server, it will automatically execute `updateSchema.js` script in order to compile the schema definitions, defined in `schema.js`, to `schema.json` and `schema.graphql`. This is required by Relay framework. However, you could also run the script manually:
+
+```bash
+$ npm run update
+```
 
 ## Project Structure
 
@@ -127,8 +159,22 @@ Again, launch your favorite web browser and go to `http://localhost:3000`.
 [CSS Modules](https://github.com/css-modules/css-modules) - CSS file in which all class names and animation names are scoped locally by default.
 
 ## Credits
-- This repository is a fork from [Relay Fullstack](https://github.com/lvarayut/relay-fullstack)
 - Relay Fullstack is inspired by [relay-starter-kit](https://github.com/relayjs/relay-starter-kit). Please take a look at the original code to learn more.
+- Handcrafted by Varayut Lerdkanlayanawat and maintained with ❤️  by [Nigel Schuster](https://github.com/Neitsch), [Nicholas Romero](https://github.com/ncrmro), and [awesome contributors](https://github.com/lvarayut/relay-fullstack#contributors).
+
+## Contributors
+
+[<img alt="lvarayut" src="https://avatars3.githubusercontent.com/u/4281887?v=3&s=117" width="117">](https://github.com/lvarayut) |[<img alt="ncrmro" src="https://avatars2.githubusercontent.com/u/8276365?v=3&s=117" width="117">](https://github.com/ncrmro) |[<img alt="Neitsch" src="https://avatars3.githubusercontent.com/u/7909844?v=3&s=117" width="117">](https://github.com/Neitsch) |[<img alt="maksugr" src="https://avatars1.githubusercontent.com/u/8699120?v=3&s=117" width="117">](https://github.com/maksugr) |[<img alt="AdamZaczek" src="https://avatars2.githubusercontent.com/u/14284341?v=3&s=117" width="117">](https://github.com/AdamZaczek) |[<img alt="BlakeBrown" src="https://avatars0.githubusercontent.com/u/6283620?v=3&s=117" width="117">](https://github.com/BlakeBrown) |
+:---: |:---: |:---: |:---: |:---: |:---: |
+[lvarayut](https://github.com/lvarayut) |[ncrmro](https://github.com/ncrmro) |[Neitsch](https://github.com/Neitsch) |[maksugr](https://github.com/maksugr) |[AdamZaczek](https://github.com/AdamZaczek) |[BlakeBrown](https://github.com/BlakeBrown) |
+
+[<img alt="ianaya89" src="https://avatars0.githubusercontent.com/u/3258966?v=3&s=117" width="117">](https://github.com/ianaya89) |[<img alt="crucialfelix" src="https://avatars2.githubusercontent.com/u/218738?v=3&s=117" width="117">](https://github.com/crucialfelix) |[<img alt="arnif" src="https://avatars3.githubusercontent.com/u/1312916?v=3&s=117" width="117">](https://github.com/arnif) |[<img alt="jtfell" src="https://avatars3.githubusercontent.com/u/6702746?v=3&s=117" width="117">](https://github.com/jtfell) |[<img alt="kennydee" src="https://avatars3.githubusercontent.com/u/1484406?v=3&s=117" width="117">](https://github.com/kennydee) |[<img alt="kkostov" src="https://avatars3.githubusercontent.com/u/4718042?v=3&s=117" width="117">](https://github.com/kkostov) |
+:---: |:---: |:---: |:---: |:---: |:---: |
+[ianaya89](https://github.com/ianaya89) |[crucialfelix](https://github.com/crucialfelix) |[arnif](https://github.com/arnif) |[jtfell](https://github.com/jtfell) |[kennydee](https://github.com/kennydee) |[kkostov](https://github.com/kkostov) |
+
+[<img alt="lexun" src="https://avatars3.githubusercontent.com/u/1910143?v=3&s=117" width="117">](https://github.com/lexun) |[<img alt="narongdejsrn" src="https://avatars3.githubusercontent.com/u/1563323?v=3&s=117" width="117">](https://github.com/narongdejsrn) |[<img alt="sankalpk" src="https://avatars0.githubusercontent.com/u/1317291?v=3&s=117" width="117">](https://github.com/sankalpk) |[<img alt="jg123" src="https://avatars2.githubusercontent.com/u/693277?v=3&s=117" width="117">](https://github.com/jg123) |
+:---: |:---: |:---: |:---: |
+[lexun](https://github.com/lexun) |[narongdejsrn](https://github.com/narongdejsrn) |[sankalpk](https://github.com/sankalpk) |[jg123](https://github.com/jg123) |
 
 ## License
 

@@ -5,14 +5,14 @@
   "scripts": {
     "start": "nodemon --watch server/data/**/*.js --exec \"npm run update && npm run start-sub-task\"",
     "start-sub-task": "./node_modules/.bin/babel-node server/index.js",
-    "update": "./node_modules/.bin/babel-node server/utils/updateSchema.js && npm run relay",
+    "update": "./node_modules/.bin/babel-node client/scripts/getSchema.js && npm run relay",
     "deploy": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.js && npm run update && npm run build-server && cross-env NODE_ENV=production node ./build/index.js",
     "build-server": "cross-env NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./build",
     "lint": "eslint client server",
     "flow": "flow",
     "heroku-postbuild": "cross-env NODE_ENV=production webpack --config webpack.config.js && cross-env NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./lib",
     "clean": "rm -rf build && mkdir build",
-    "relay": "relay-compiler --src ./client --schema server/data/schema.graphql",
+    "relay": "relay-compiler --src ./client --schema client/assets/graphql/schema.graphql",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -52,6 +52,8 @@
   "homepage": "https://github.com/lvarayut/relay-fullstack",
   "devDependencies": {
     "babel-plugin-relay": "dev",
+    "chai": "^4.1.2",
+    "chai-jquery": "^2.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-config-prettier": "^2.5.0",
@@ -62,16 +64,21 @@
     "eslint-plugin-react": "^7.3.0",
     "flow-bin": "0.45.0",
     "husky": "^0.14.3",
+    "jquery": "^3.2.1",
+    "jsdom": "^11.2.0",
     "lint-staged": "^4.2.1",
+    "mocha": "^3.5.3",
     "nodemon": "^1.11.0",
     "pre-commit": "^1.2.2",
     "prettier": "^1.7.0",
+    "react-addons-test-utils": "^15.6.0",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.4",
     "redbox-react": "^1.4.2",
-    "relay-compiler": "dev"
+    "relay-compiler": "^1.4.0"
   },
   "dependencies": {
+    "ajv": "^5.2.0",
     "autoprefixer": "^7.1.1",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
@@ -89,11 +96,14 @@
     "dataloader": "^1.3.0",
     "express": "^4.15.3",
     "express-graphql": "^0.6.6",
+    "farce": "^0.2.1",
     "favicons-webpack-plugin": "0.0.7",
     "file-loader": "^0.11.2",
+    "found": "^0.3.4",
+    "found-relay": "^0.3.0-alpha.7",
     "graphql": "^0.10.3",
     "graphql-relay": "^0.5.2",
-    "html-webpack-plugin": "^2.28.0",
+    "html-webpack-plugin": "^2.30.1",
     "i18next": "^9.0.0",
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
@@ -106,12 +116,14 @@
     "react-hot-loader": "3.0.0-beta.6",
     "react-i18next": "^5.4.1",
     "react-mdl": "^1.10.3",
-    "react-relay": "^1.0.0",
-    "react-router": "^3.0.5",
-    "react-router-relay": "^0.14.0",
+    "react-redux": "^5.0.6",
+    "react-relay": "^1.4.0",
+    "redux": "^3.7.2",
+    "relay-local-schema": "^0.6.2",
+    "relay-runtime": "^1.4.0",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "2.5.0"
+    "webpack-dev-server": "^2.8.2"
   }
 }
