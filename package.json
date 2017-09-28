@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nodemon --watch server/data/**/*.js --exec \" node client/scripts/getSchema.js && npm run update && npm run start-sub-task\"",
     "start-sub-task": "./node_modules/.bin/babel-node server/index.js",
+    "test": "jest",
     "update": "./node_modules/.bin/babel-node client/scripts/getSchema.js && npm run relay",
     "deploy": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.js && npm run update && npm run build-server && cross-env NODE_ENV=production node ./build/index.js",
     "build-server": "cross-env NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./build",
@@ -18,6 +19,11 @@
     "*.{js,json,css}": [
       "prettier --write --single-quote",
       "git add"
+    ]
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "server/config/environment/test.js"
     ]
   },
   "repository": {
@@ -50,7 +56,9 @@
   },
   "homepage": "https://github.com/lvarayut/relay-fullstack",
   "devDependencies": {
+    "babel-jest": "^21.2.0",
     "babel-plugin-relay": "dev",
+    "babel-preset-react": "^6.24.1",
     "chai": "^4.1.2",
     "chai-jquery": "^2.0.0",
     "eslint": "^3.19.0",
@@ -63,6 +71,7 @@
     "eslint-plugin-react": "^7.3.0",
     "flow-bin": "0.45.0",
     "husky": "^0.14.3",
+    "jest": "^21.2.1",
     "jquery": "^3.2.1",
     "jsdom": "^11.2.0",
     "lint-staged": "^4.2.1",
@@ -71,6 +80,7 @@
     "pre-commit": "^1.2.2",
     "prettier": "^1.7.0",
     "react-addons-test-utils": "^15.6.0",
+    "react-test-renderer": "^15.6.2",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.4",
     "redbox-react": "^1.4.2",
@@ -85,7 +95,6 @@
     "babel-loader": "^7.1.0",
     "babel-plugin-react-transform": "^2.0.2",
     "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-relay-plugin": "^0.11.0",
     "chalk": "^1.1.3",
