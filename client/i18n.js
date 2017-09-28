@@ -6,17 +6,19 @@ i18next.init({
     en: {
       translations: {
         pleasure: 'Always a pleasure scaffolding your apps',
-        handcrafted: 'Handcrafted with ♥ by'
+        handcrafted: 'Handcrafted with ♥ by',
+        signUp: 'Sign Up'
       }
     },
     br: {
       translations: {
         pleasure: 'Sempre um prazer fazer o scaffold dos seus apps',
-        handcrafted: 'Feito com o ♥ por'
+        handcrafted: 'Feito com o ♥ por',
+        signUp: 'Registrar'
       }
     }
   },
-  fallbackLng: 'en',
+  fallbackLng: 'br',
 
   // have a common namespace used around the full app
   ns: ['translations'],

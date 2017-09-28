@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
 const path = module.require('path');
 const fetch = module.require('node-fetch');
 const fs = module.require('fs');
+const chalk = module.require('chalk');
 
 const {
   buildClientSchema,
@@ -24,4 +26,9 @@ fetch('http://localhost:3001/god', {
     const schemaString = printSchema(buildClientSchema(res.data));
     fs.writeFileSync(jsonFile, JSON.stringify(res, null, 2));
     fs.writeFileSync(graphQLFile, schemaString);
+  })
+  .catch(error => {
+    if (error.code === 'ECONNREFUSED') {
+      console.log(chalk.red('Connection error, run your API!'));
+    }
   });

@@ -1,7 +1,9 @@
 // @flow
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { QueryRenderer, graphql } from 'react-relay';
 import { Grid, Cell, Textfield, Button } from 'react-mdl';
+import { translate } from 'react-i18next';
 import Page from '../Page/PageComponent';
 
 import environment from '../../relay/createRelayEnvironment';
@@ -15,9 +17,13 @@ const query = graphql`
 `;
 
 class Signup extends Component {
+  static propTypes = {
+    t: PropTypes.func.isRequired
+  };
   render() {
+    const { t } = this.props;
     return (
-      <Page heading="Signup">
+      <Page heading={t('signUp')}>
         <div style={{ width: '70%', margin: 'auto' }}>
           <Grid>
             <form style={{ margin: 'auto' }}>
@@ -52,7 +58,7 @@ class Signup extends Component {
                 />
               </Cell>
               <Cell col={12} style={{ textAlign: 'right' }}>
-                <Button primary>Sign up</Button>
+                <Button primary>{t('signUp')}</Button>
               </Cell>
             </form>
           </Grid>
@@ -62,4 +68,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default translate()(Signup);
