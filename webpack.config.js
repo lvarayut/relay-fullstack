@@ -35,8 +35,8 @@ if (process.env.NODE_ENV === 'production') {
       template: './client/index.html',
       mobile: true,
       inject: false
-    }),
-    new FaviconsWebpackPlugin('./client/assets/logo.png')
+    })
+    // new FaviconsWebpackPlugin('./client/assets/logo.png')
   ];
 } else {
   appEntry = [
@@ -63,8 +63,8 @@ if (process.env.NODE_ENV === 'production') {
       template: './client/index.html',
       mobile: true,
       inject: false
-    }),
-    new FaviconsWebpackPlugin('./client/assets/logo.png')
+    })
+    // new FaviconsWebpackPlugin('./client/assets/logo.png')
   ];
 }
 
