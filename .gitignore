@@ -39,3 +39,8 @@ flow-typed/npm/
 *.swp
 *.vim
 
+# --------------------
+# Lock Files
+# --------------------
+package-lock.json
+yarn.lock

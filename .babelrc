@@ -1,9 +1,9 @@
 {
   "plugins": [
-    ["relay", { "schema": "./server/data/schema.json", "compat": true }],
+    ["relay", { "schema": "./client/assets/graphql/schema.json" }],
     "transform-flow-strip-types"
   ],
-  "presets": ["react", "es2015", "stage-0"],
+  "presets": ["react", "env", "stage-0"],
   "env": {
     "development": {
       "plugins": [
@@ -17,7 +17,7 @@
             "imports": ["react", "redbox-react"]
           }]
         }],
-        ["relay", {"compat": true, "schema": "server/data/schema.graphql"}]
+        ["relay", { "schema": "client/assets/graphql/schema.graphql" }]
       ]
     }
   }
