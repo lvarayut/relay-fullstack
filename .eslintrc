@@ -24,6 +24,7 @@
     "react/prefer-stateless-function": 0,
     "react/jsx-filename-extension": 0,
     "react/forbid-prop-types": 0,
-    "prettier/prettier": ["error", { "singleQuote": true, "postcss": true }]
+    "prettier/prettier": ["error", { "singleQuote": true, "postcss": true }],
+    "jest": true
   }
 }
