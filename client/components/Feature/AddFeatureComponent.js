@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from 'react-dropdown';
 import { Grid, Cell, Button } from 'react-mdl';
+import { translate } from 'react-i18next';
 import Page from '../Page/PageComponent';
 import AddFeatureMutation from './AddFeatureMutation';
 
@@ -19,10 +20,11 @@ const inputData = {
   css: { name: 'css', url: 'https://www.w3.org/Style/CSS/Overview.en.html', description: 'Cascading Style Sheets (CSS) is a simple mechanism for adding style to Web documents.' }
 };
 
-export default class AddFeature extends React.Component {
+class AddFeature extends React.Component {
   static propTypes = {
     viewer: PropTypes.object.isRequired,
     relay: PropTypes.object.isRequired,
+    t: PropTypes.func.isRequired
   };
 
   state = {
@@ -48,17 +50,20 @@ export default class AddFeature extends React.Component {
   }
 
   render() {
+    const { t } = this.props;
     return (
-      <Page heading='Add a Feature'>
+      <Page heading={t('addFeature')}>
         <Grid>
           <Cell col={9}>
             <Dropdown options={options} onChange={this.onSelect.bind(this)} value={this.state.form.dropdown} />
           </Cell>
           <Cell col={3} style={{ textAlign: 'center' }}>
-            <Button raised accent onClick={this.addFeature.bind(this)}>Add Feature</Button>
+            <Button raised accent onClick={this.addFeature.bind(this)}>{t('addFeature')}</Button>
           </Cell>
         </Grid>
       </Page>
     );
   }
 }
+
+export default translate()(AddFeature);

@@ -3,20 +3,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Cell, Card, CardTitle, CardText, CardActions, Button } from 'react-mdl';
+import { translate } from 'react-i18next';
 import Page from '../Page/PageComponent';
 import styles from './Feature.scss';
 import AddFeature from './AddFeatureComponent';
 
-export default class Feature extends React.Component {
+class Feature extends React.Component {
   static propTypes = {
     viewer: PropTypes.object.isRequired,
     relay: PropTypes.object.isRequired,
+    t: PropTypes.func.isRequired
   };
 
   render() {
+    const { t } = this.props;
     return (
       <div>
-        <Page heading='Integrated with'>
+        <Page heading={t('integratedWith')}>
           <Grid>
             {this.props.viewer.features.edges.map((edge) => {
               const imageUrl = require(`../../assets/${edge.node.name.toLowerCase()}.png`);
@@ -41,3 +44,5 @@ export default class Feature extends React.Component {
     );
   }
 }
+
+export default translate()(Feature);
