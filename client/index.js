@@ -4,9 +4,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import '../node_modules/react-mdl/extra/material';
+import { translate } from 'react-i18next';
 import Root from './root';
+import i18next from './i18n';
 
 const rootNode = document.createElement('div');
+
+translate.setI18n(i18next);
+translate.setDefaults({
+  wait: false,
+  withRef: false,
+  bindI18n: 'languageChanged loaded',
+  bindStore: 'added removed',
+  nsMode: 'default',
+  translateFuncName: 't'
+});
 
 if (document.body) {
   document.body.appendChild(rootNode);
