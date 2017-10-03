@@ -32,7 +32,7 @@ i18next.init({
       }
     }
   },
-  fallbackLng: 'ptBr',
+  fallbackLng: 'en',
 
   // have a common namespace used around the full app
   ns: ['translations'],
