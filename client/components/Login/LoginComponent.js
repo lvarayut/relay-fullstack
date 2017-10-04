@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
-import { Grid, TextField, withStyles, Button } from 'material-ui';
+import { Grid, TextField, withStyles, withTheme, Button } from 'material-ui';
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
 
 const styles = theme => ({
@@ -28,7 +28,7 @@ const styles = theme => ({
   }
 });
 
-class Login extends Component {
+let Login = class Login extends Component {
   static propTypes = {
     t: PropTypes.func.isRequired
   };
@@ -84,5 +84,5 @@ class Login extends Component {
     );
   }
 }
-
+Login = withTheme()(Login)
 export default translate()(withStyles(styles)(Login));

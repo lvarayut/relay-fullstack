@@ -6,6 +6,7 @@ import { AppContainer } from 'react-hot-loader';
 import { translate } from 'react-i18next';
 import Root from './root';
 import i18next from './i18n';
+import SLTheme from './components/Theme/SLTheme';
 
 const rootNode = document.createElement('div');
 
@@ -21,9 +22,11 @@ if (document.body) {
 
 const render = Component => {
   ReactDOM.render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
+    <SLTheme>
+      <AppContainer>
+        <Component />
+      </AppContainer>
+    </SLTheme>,
     rootNode
   );
 };
