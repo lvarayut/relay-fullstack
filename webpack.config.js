@@ -71,7 +71,7 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
   entry: {
     app: appEntry,
-    vendor: ['react', 'react-dom', 'react-mdl', 'react-relay']
+    vendor: ['react', 'react-dom', 'react-relay']
   },
   output: {
     path: path.join(__dirname, 'build/app'),

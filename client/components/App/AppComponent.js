@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import 'normalize.css/normalize.css';
-import 'react-mdl/extra/css/material.cyan-red.min.css';
 import Navbar from '../Navbar/NavbarComponent';
 import Footer from '../Footer/FooterContainer';
 import styles from './App.scss';

@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import { Link } from 'found';
-import { Layout, Header, Navigation, Drawer } from 'react-mdl';
 import styles from './Navbar.scss';
 
 export default class Navbar extends React.Component {

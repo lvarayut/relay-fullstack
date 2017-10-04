@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { QueryRenderer, graphql } from 'react-relay';
-import { Grid, Cell, Textfield, Button } from 'react-mdl';
 import { translate } from 'react-i18next';
+import { Grid, TextField, Button } from 'material-ui';
 import Page from '../Page/PageComponent';
 
 import environment from '../../relay/createRelayEnvironment';
@@ -25,42 +25,49 @@ class Signup extends Component {
     return (
       <Page heading={t('signUp')}>
         <div style={{ width: '70%', margin: 'auto' }}>
-          <Grid>
-            <form style={{ margin: 'auto' }}>
-              <Cell col={12}>
-                <QueryRenderer
-                  environment={environment}
-                  query={query}
-                  variables={{
-                    Organization: 'OrganizationID',
-                    Token: 'GODWORD'
-                  }}
-                  render={({ error, props }) => {
-                    if (error) {
-                      return <div>{error}</div>;
-                    } else if (props) {
-                      return (
-                        <Textfield
-                          onChange={() => {}}
-                          label={props.getOrganization.Name}
-                        />
-                      );
-                    }
-                    return <div>Loading</div>;
-                  }}
-                />
-              </Cell>
-              <Cell col={12}>
-                <Textfield
-                  onChange={() => {}}
-                  label="Password"
-                  type="password"
-                />
-              </Cell>
-              <Cell col={12} style={{ textAlign: 'right' }}>
-                <Button primary>{t('signUp')}</Button>
-              </Cell>
-            </form>
+          <Grid container className='justify-xs-center'>
+            <Grid
+              container
+              align='center'
+              direction='row'
+              justify='center'
+            >
+              <form style={{ margin: 'auto' }}>
+                <Grid>
+                  <QueryRenderer
+                      environment={environment}
+                      query={query}
+                      variables={{
+                        Organization: 'OrganizationID',
+                        Token: 'GODWORD'
+                      }}
+                      render={({ error, props }) => {
+                        if (error) {
+                          return <div>{error}</div>;
+                        } else if (props) {
+                          return (
+                            <TextField
+                              onChange={() => {}}
+                              label={props.getOrganization.Name}
+                            />
+                          );
+                        }
+                        return <div>Loading</div>;
+                      }}
+                    />
+                </Grid>
+                <Grid>
+                  <TextField
+                    onChange={() => {}}
+                    label="Password"
+                    type="password"
+                  />
+                </Grid>
+                <Grid col={12} style={{ textAlign: 'right' }}>
+                  <Button primary>{t('signUp')}</Button>
+                </Grid>
+              </form>
+            </Grid>
           </Grid>
         </div>
       </Page>
