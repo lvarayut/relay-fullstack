@@ -13,13 +13,20 @@ import schema from './data/schema';
 
 if (config.env === 'development') {
   // Launch GraphQL
-  const graphql = express();
-  graphql.use('/', graphQLHTTP({
-    graphiql: true,
-    pretty: true,
-    schema
-  }));
-  graphql.listen(config.graphql.port, () => console.log(chalk.green(`GraphQL is listening on port ${config.graphql.port}`)));
+  // const graphql = express();
+  // graphql.use(
+  //   '/',
+  //   graphQLHTTP({
+  //     graphiql: true,
+  //     pretty: true,
+  //     schema
+  //   })
+  // );
+  // graphql.listen(config.graphql.port, () =>
+  //   console.log(
+  //     chalk.green(`GraphQL is listening on port ${config.graphql.port}`)
+  //   )
+  // );
 
   // Launch Relay by using webpack.config.js
   const relayServer = new WebpackDevServer(webpack(webpackConfig), {
@@ -36,12 +43,16 @@ if (config.env === 'development') {
 
   // Serve static resources
   relayServer.use('/', express.static(path.join(__dirname, '../build')));
-  relayServer.listen(config.port, () => console.log(chalk.green(`Relay is listening on port ${config.port}`)));
+  relayServer.listen(config.port, () =>
+    console.log(chalk.green(`Relay is listening on port ${config.port}`))
+  );
 } else if (config.env === 'production') {
   // Launch Relay by creating a normal express server
   const relayServer = express();
   relayServer.use(historyApiFallback());
   relayServer.use('/', express.static(path.join(__dirname, '../build/app')));
   relayServer.use('/graphql', graphQLHTTP({ schema }));
-  relayServer.listen(config.port, () => console.log(chalk.green(`Relay is listening on port ${config.port}`)));
+  relayServer.listen(config.port, () =>
+    console.log(chalk.green(`Relay is listening on port ${config.port}`))
+  );
 }

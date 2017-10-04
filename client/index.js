@@ -3,20 +3,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import '../node_modules/react-mdl/extra/material';
+import { translate } from 'react-i18next';
 import Root from './root';
+import i18next from './i18n';
+import SLTheme from './components/Theme/SLTheme';
 
 const rootNode = document.createElement('div');
+
+translate.setI18n(i18next);
+translate.setDefaults({
+  nsMode: 'default',
+  translateFuncName: 't'
+});
 
 if (document.body) {
   document.body.appendChild(rootNode);
 }
 
-const render = (Component) => {
+const render = Component => {
   ReactDOM.render(
-    <AppContainer >
-      <Component />
-    </AppContainer>,
+    <SLTheme>
+      <AppContainer>
+        <Component />
+      </AppContainer>
+    </SLTheme>,
     rootNode
   );
 };
