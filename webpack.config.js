@@ -42,7 +42,7 @@ if (process.env.NODE_ENV === 'production') {
   appEntry = [
     'react-hot-loader/patch',
     path.join(__dirname, 'client/index.js'),
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?http://localhost:8888',
     'webpack/hot/only-dev-server'
   ];
   devtool = 'eval';
