@@ -36,7 +36,7 @@ export default class AddFeature extends React.Component {
   }
 
   addFeature = () => {
-    const value = this.state.form.dropdown.value;
+    const { value } = this.state.form.dropdown;
     if (value === 'none') {
       return;
     }
